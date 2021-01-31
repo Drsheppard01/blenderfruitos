@@ -7,11 +7,8 @@ sudo eopkg it -c system.devel -y
 # Install wi-fi driver
 git clone https://github.com/gordboy/rtl8812au-5.9.3.2.git
 cd rtl8812au
-echo -e "\e[40;38;5;82m Building driver \e[30;48;5;82m\e[0m"
 make
-echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
-echo $PASSWORD | sudo -S "make install"
-echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
+sudo make install
 
 
 # Delete pre-installed apps
