@@ -9,6 +9,7 @@ git clone https://github.com/gordboy/rtl8812au-5.9.3.2.git
 cd rtl8812au
 make
 sudo make install
+modprobe 8812au
 
 
 # Delete pre-installed apps
