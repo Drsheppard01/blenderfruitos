@@ -2,29 +2,56 @@
 # Program Keybindings #
 #######################
 
-
 # terminal emulator
 super + t
 	kitty
 
 # program launcher
-super + d
+super + Tab
 	rofi -show drun
 
-# make sxhkd reload its configuration files:
-super + Escape
-	pkill -USR1 -x sxhkd
+#run command
+super + r
+	$LAUNCHER -show run
 
+#open text editor
+alt + v
+	code-oss
+
+#open browser
+alt + b
+	firefox
+
+#open file manager
+alt + f
+	nautilus
+
+#make screenshot
+ctrl + Print
+	scrot ~/'Images'/'Снимок экрана'
+
+# lock
+# super + shift + z
+#        betterlockscreen -l blur
+
+alt + shift
+		setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle
+
+#switch window 
+alt+Tab
+	rofi -show window
 #####################
 # BSPWM Keybindings #
 #####################
+super + Escape
+	pkill -USR1 -x sxhkd
 
 # quit/restart bspwm
-super + alt + {q,r}
+super + {l,r}
 	bspc {quit,wm -r}
 
 # close and kill
-super + {_,shift + }w
+super + {_,shift + }q
 	bspc node -{c,k}
 
 # alternate between the tiled and monocle layout
@@ -38,8 +65,6 @@ super + y
 # swap the current node and the biggest window
 super + g
 	bspc node -s biggest.window
-super + shift + p
-	picom_toggle.sh
 
 #
 # state/flags
