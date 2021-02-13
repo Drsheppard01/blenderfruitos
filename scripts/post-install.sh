@@ -2,7 +2,7 @@
 sudo eopkg up -y
 
 # Install developer packages
-sudo eopkg it -c system.devel -y
+sudo eopkg it -c make gcc binutils git
 
 # Install wi-fi driver
 git clone https://github.com/gordboy/rtl8812au-5.9.3.2.git
