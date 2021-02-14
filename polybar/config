@@ -20,16 +20,16 @@
 ; include an external file, like module file, etc.
 
 include-file = ~/.config/polybar/colors.ini
-
+include-file = ~/.config/polybar/spotify.ini
 ;==========================================================
 
 ;[colors]
-;background = ${xrdb:color0}
-;foreground = ${xrdb:color7}
-;foreground-alt = ${xrdb:color2}
-;primary = ${xrdb:color3}
-;secondary = ${xrdb:color1}
-;alert = ${xrdb:color5}
+background = ${xrdb:color0}
+foreground = ${xrdb:color7}
+foreground-alt = ${xrdb:color2}
+primary = ${xrdb:color3}
+secondary = ${xrdb:color1}
+alert = ${xrdb:color5}
 
 [colors]
 ;background = ${xrdb:color0}
@@ -84,10 +84,12 @@ module-margin-right = 1
 font-0 = "Iosevka Nerd Font:size=10;4"
 font-1 = "Iosevka Nerd Font:size=10;3"
 font-2 = "feather:size=12;3"
+font-3 = "Terminus:size=10;3"
+font-4 = "waffle:size=10;3"
 
-modules-left = bspwm filesystem
-modules-center = date spotify
-modules-right = keyboard cpu memory network pulseaudio powermenu
+modules-left = bspwm mod
+modules-center = date
+modules-right = cpu memory filesystem keyboard wlan pulseaudio powermenu
 
 ;tray-position = right
 ;tray-padding = 0
@@ -127,20 +129,61 @@ label-empty-padding = 1
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-[module/spotify]
-type = custom/script
-tail = true
-format-prefix = "%{T4}%{F#79e6f3}    %{F-}%{T-}"
-format-prefix-foreground = ${color.acolor}
-format = <label>
-click-left = playerctl play-pause
-scroll-up = playerctl previous
-scroll-down = playerctl next
-exec = sh /home/drsheppard/scripts/spotify/song.sh
+[module/mod]
 
-format-background = ${color.bg2}
-format-foreground = ${color.txt}
-format-padding = 2
+type = internal/bspwm
+format = <label-mode>
+
+label-monocle = " Monocle "
+label-monocle-foreground = ${colors.foreground}
+label-monocle-background = ${colors.dark1}
+label-monocle-padding = 0
+
+label-tiled = " Tiled  "
+label-tiled-foreground = ${colors.foreground}
+label-tiled-background = ${colors.dark1}
+label-tiled-padding = 0
+
+label-fullscreen = "Fullscreen  "
+label-fullscreen-foreground = ${colors.foreground}
+label-fullscreen-background = ${colors.dark1}
+label-fullscreen-padding = 0
+
+label-floating = "Floating  "
+label-floating-foreground = ${colors.foreground}
+label-floating-background = ${colors.dark1}
+label-floating-padding = 0
+
+label-pseudotiled = "P-Tiled  "
+label-pseudotiled-foreground = ${colors.foreground}
+label-pseudotiled-background = ${colors.dark1}
+label-pseudotiled-padding = 0
+
+label-locked = "Locked  "
+label-locked-foreground = ${colors.foreground}
+label-locked-background = ${colors.dark1}
+label-locked-padding = 0
+
+label-sticky = "Sticky  "
+label-sticky-foreground = ${colors.foreground}
+label-sticky-background = ${colors.dark1}
+label-sticky-padding = 0
+
+label-marked = "Marked  "
+label-marked-foreground = ${colors.foreground}
+label-marked-background = ${colors.dark1}
+label-marked-padding = 0
+
+label-private = "Private  "
+label-private-foreground = ${colors.foreground}
+label-private-background = ${colors.dark1}
+label-private-padding = 0
+
+format-padding = 0
+format-foreground = ${colors.foreground}
+format-background = ${colors.dark1}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/xwindow]
 type = internal/xwindow
@@ -159,7 +202,7 @@ blacklist-1 = scroll lock
 ;   <label-layout> (default)
 ;   <label-indicator> (default)
 format = <label-layout> <label-indicator>
-format-prefix = 
+format-prefix = " "
 format-prefix-foreground = ${color.blue-gray}
 
 ; Available tokens:
@@ -167,7 +210,7 @@ format-prefix-foreground = ${color.blue-gray}
 ;   %name%
 ;   %number%
 ; Default: %layout%
-label-layout = " %layout%"
+label-layout = "%layout%"
 
 ; Available tokens:
 ;   %name%
@@ -179,6 +222,7 @@ label-indicator-on-foreground = ${color.cyan}
 
 [module/filesystem]
 type = internal/fs
+
 ; Mountpoints to display
 mount-0 = /
 ;;mount-1 = /home
@@ -190,7 +234,7 @@ interval = 30
 
 ; Display fixed precision values
 ; Default: false
-fixed-values = false
+fixed-values = true
 
 ; Spacing between entries
 ; Default: 2
@@ -201,15 +245,13 @@ fixed-values = false
 ;   <bar-free>
 ;   <bar-used>
 ;   <ramp-capacity>
-format-mounted = <bar-used><label-mounted>
-format-mounted-prefix = 
-format-mounted-prefix-foreground = ${color.purple}
+format-mounted = <label-mounted>
+format-mounted-prefix = 
 
 ; Available tags:
 ;   <label-unmounted> (default)
 format-unmounted = <label-unmounted>
-format-unmounted-prefix = 
-format-unmounted-prefix-foreground = ${color.red}
+format-unmounted-prefix = 
 
 ; Available tokens:
 ;   %mountpoint%
@@ -221,33 +263,13 @@ format-unmounted-prefix-foreground = ${color.red}
 ;   %free%
 ;   %used%
 ; Default: %mountpoint% %percentage_free%%
-label-mounted = " %used%/%total%"
+label-mounted = " %percentage_free%"
 
 ; Available tokens:
 ;   %mountpoint%
 ; Default: %mountpoint% is not mounted
 label-unmounted = " %mountpoint%: not mounted"
 
-; Only applies if <bar-used> is used
-bar-used-format = " %fill%%indicator%%empty%"
-bar-used-width = 11
-bar-used-gradient = false
-
-bar-used-indicator = ${bar.indicator}
-bar-used-indicator-font = 2
-bar-used-indicator-foreground = ${color.foreground}
-
-bar-used-fill = ${bar.fill}
-bar-used-fill-font = 2
-bar-used-foreground-0 = ${color.green}
-bar-used-foreground-1 = ${color.green}
-bar-used-foreground-2 = ${color.yellow}
-bar-used-foreground-3 = ${color.yellow}
-bar-used-foreground-4 = ${color.red}
-
-bar-used-empty = ${bar.empty}
-bar-used-empty-font = 2
-bar-used-empty-foreground = ${color.sep}
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 ; [module/mpd]
@@ -268,12 +290,11 @@ bar-used-empty-foreground = ${color.sep}
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/cpu]
-
 type = internal/cpu
 
 ; Seconds to sleep between updates
 ; Default: 1
-interval = 0.5
+interval = 1
 
 ; Available tags:
 ;   <label> (default)
@@ -281,9 +302,8 @@ interval = 0.5
 ;   <ramp-load>
 ;   <ramp-coreload>
 ;;format = <label> <ramp-coreload>
-format = <bar-load><label>
-format-prefix = 
-format-prefix-foreground = ${color.teal}
+format = <label>
+format-prefix = 
 
 ; Available tokens:
 ;   %percentage% (default) - total cpu load averaged over all cores
@@ -292,27 +312,43 @@ format-prefix-foreground = ${color.teal}
 ;   %percentage-core[1-9]% - load percentage for specific core
 label = " %percentage%%"
 
-; Only applies if <bar-load> is used
-bar-load-format = " %fill%%indicator%%empty%"
-bar-load-width = 11
-bar-load-gradient = false
+; Spacing between individual per-core ramps
+;;ramp-coreload-spacing = 1
+;;ramp-coreload-0 = ${cpu.load0}
+;;ramp-coreload-1 = ${cpu.load1}
 
-bar-load-indicator = ${bar.indicator}
-bar-load-indicator-font = 2
-bar-load-indicator-foreground = ${color.foreground}
+;;ramp-load-0 = ${cpu.load0}
+;;ramp-load-1 = ${cpu.load1}
 
-bar-load-fill = ${bar.fill}
-bar-load-fill-font = 2
-bar-load-foreground-0 = ${color.green}
-bar-load-foreground-1 = ${color.green}
-bar-load-foreground-2 = ${color.yellow}
-bar-load-foreground-3 = ${color.yellow}
-bar-load-foreground-4 = ${color.red}
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-bar-load-empty = ${bar.empty}
-bar-load-empty-font = 2
-bar-load-empty-foreground = ${color.sep}
+[module/date]
+type = internal/date
 
+; Seconds to sleep between updates
+interval = 1.0
+
+; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+;;date = %Y-%m-%d%
+
+; Optional time format
+time = " %H:%M "
+
+; if `date-alt` or `time-alt` is defined, clicking
+; the module will toggle between formats
+;;date-alt = %A, %d %B %Y
+time-alt = " %a, %d %b %Y"
+
+; Available tags:
+;   <label> (default)
+format = <label>
+
+; Available tokens:
+;   %date%
+;   %time%
+; Default: %date%
+label = %time%
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/memory]
@@ -320,7 +356,7 @@ type = internal/memory
 
 ; Seconds to sleep between updates
 ; Default: 1
-interval = 3
+interval = 1
 
 ; Available tags:
 ;   <label> (default)
@@ -333,9 +369,7 @@ interval = 3
 ;   <ramp-swap-used>
 ;   <ramp-swap-free>
 format = <label>
-format-prefix =  
-format-background = ${color.mb}
-format-padding = ${layout.module-padding}
+format-prefix = 
 
 ; Available tokens:
 ;   %percentage_used% (default)
@@ -357,167 +391,56 @@ format-padding = ${layout.module-padding}
 
 label = " %mb_used%"
 
-; Only applies if <bar-used> is used
-;;bar-used-indicator =
-;;bar-used-width = 50
-;;bar-used-foreground-0 = #55aa55
-;;bar-used-foreground-1 = #557755
-;;bar-used-foreground-2 = #f5a70a
-;;bar-used-foreground-3 = #ff5555
-;;bar-used-fill = ▐
-;;bar-used-empty = ▐
-;;bar-used-empty-foreground = #444444
-
 ; Only applies if <ramp-used> is used
-;;ramp-used-0 = 
-;;ramp-used-1 = 
-;;ramp-used-2 = 
-;;ramp-used-3 = 
-;;ramp-used-4 = 
+;;ramp-used-0 = ${memory.used0}
+;;ramp-used-1 = ${memory.used1}
+;;ramp-used-2 = ${memory.used2}
 
 ; Only applies if <ramp-free> is used
-;;ramp-free-0 = 
-;;ramp-free-1 = 
-;;ramp-free-2 = 
-;;ramp-free-3 = 
-;;ramp-free-4 = 
+;;ramp-free-0 = ${memory.free0}
+;;ramp-free-1 = ${memory.free1}
+;;ramp-free-2 = ${memory.free2}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 ; If you use both a wired and a wireless network, just add 2 module definitions. For example
-[module/wired-network]
+[module/wlan]
 type = internal/network
-interface = eth0
+interface = wlo1
+interval = 3.0
 
-[module/wireless-network]
-type = internal/network
-interface = wlp3s0
-
-; Normal Module
-[module/network]
-type = internal/network
-interface = wlan0
-
-; Seconds to sleep between updates
-; Default: 1
-interval = 1.0
-
-; Test connectivity every Nth update
-; A value of 0 disables the feature
-; NOTE: Experimental (needs more testing)
-; Default: 0
-;ping-interval = 3
-
-; @deprecated: Define min width using token specifiers (%downspeed:min% and %upspeed:min%)
-; Minimum output width of upload/download rate
-; Default: 3
-;;udspeed-minwidth = 5
-
-; Accumulate values from all interfaces
-; when querying for up/downspeed rate
-; Default: false
-accumulate-stats = true
-
-; Consider an `UNKNOWN` interface state as up.
-; Some devices have an unknown state, even when they're running
-; Default: false
-unknown-as-up = true
-
-; Available tags:
-;   <label-connected> (default)
-;   <ramp-signal>
 format-connected = <ramp-signal> <label-connected>
-format-connected-background = ${color.mb}
-format-connected-padding = ${layout.module-padding}
-; Available tags:
-;   <label-disconnected> (default)
-format-disconnected = <label-disconnected>
-format-disconnected-background = ${color.mb}
-format-disconnected-padding = ${layout.module-padding}
-; Available tags:
-;   <label-connected> (default)
-;   <label-packetloss>
-;   <animation-packetloss>
-;;format-packetloss = <animation-packetloss> <label-connected>
+format-connected-underline = #9f78e1
+label-connected = %essid%
 
-; Available tokens:
-;   %ifname%    [wireless+wired]
-;   %local_ip%  [wireless+wired]
-;   %local_ip6% [wireless+wired]
-;   %essid%     [wireless]
-;   %signal%    [wireless]
-;   %upspeed%   [wireless+wired]
-;   %downspeed% [wireless+wired]
-;   %linkspeed% [wired]
-; Default: %ifname% %local_ip%
-label-connected = "%essid% %downspeed:8% %upspeed:8%"
-;;label-connected-foreground = #eefafafa
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
 
-; Available tokens:
-;   %ifname%    [wireless+wired]
-; Default: (none)
-label-disconnected =  "Not Connected"
-;;label-disconnected-foreground = #66ffffff
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground-alt}
 
-; Available tokens:
-;   %ifname%    [wireless+wired]
-;   %local_ip%  [wireless+wired]
-;   %local_ip6% [wireless+wired]
-;   %essid%     [wireless]
-;   %signal%    [wireless]
-;   %upspeed%   [wireless+wired]
-;   %downspeed% [wireless+wired]
-;   %linkspeed% [wired]
-; Default: (none)
-;label-packetloss = %essid%
-;label-packetloss-foreground = #eefafafa
+[module/eth]
+type = internal/network
+interface = eno2
+interval = 3.0
 
-; Only applies if <ramp-signal> is used
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+format-connected-underline = #55aa55
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
 
-; Only applies if <animation-packetloss> is used
-;;animation-packetloss-0 = ⚠
-;;animation-packetloss-0-foreground = #ffa64c
-;;animation-packetloss-1 = ⚠
-;;animation-packetloss-1-foreground = #000000
-; Framerate in milliseconds
-;;animation-packetloss-framerate = 500
-
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/date]
-type = internal/date
-
-; Seconds to sleep between updates
-interval = 1.0
-
-; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
-; NOTE: if you want to use syntax tags here you need to use %%{...}
-;;date = %Y-%m-%d%
-
-; Optional time format
-time =  %H:%M %
-
-; if `date-alt` or `time-alt` is defined, clicking
-; the module will toggle between formats
-;;date-alt = %A, %d %B %Y
-time-alt =  %a-%m-%d%
-
-; Available tags:
-;   <label> (default)
-format = <label>
-format-background = ${color.mb}
-format-padding = ${layout.module-padding}
-; Available tokens:
-;   %date%
-;   %time%
-; Default: %date%
-label = %time%
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -620,6 +543,16 @@ ramp-headphones-0 = 
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
+[module/checkupdates]
+type = custom/script
+exec = ~/scripts/checkupdates.sh
+interval = 120
+format-prefix-foreground = #168ECA
+format-prefix = 
+label = "%output%"
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
 [module/brightness]
 ;type = internal/xbacklight
 type = internal/backlight
@@ -627,7 +560,7 @@ type = internal/backlight
 ; Use the following command to list available cards:
 ; $ ls -1 /sys/class/backlight/
 ;card = intel_backlight
-card = amdgpu_bl0
+card = nvidia
 
 ; Available tags:
 ;   <label> (default)
@@ -698,29 +631,39 @@ content-foreground = ${color.bgs}
 ;; ;-     rounded end    -; ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-[module/pulseaudio]
+[module/mpris]
+type = custom/script
+icon = 契
+exec = ~/scripts/mpris_tail.py --icon-stopped '' --truncate-text '..' -f '%{A1:playerctl previous:} %{A}| {:artist:t18:{artist}:}{:artist: - :}{:t25:{title}:}'
+tail = true
+format-background = ${colors.dark2}
+format-foreground = ${colors.foreground}
+format-padding = 2
+label = "%output%"
+click-left = ~/scripts/mpris_tail.py play-pause &
+click-right = ~/scripts/mpris_tail.py next &
 
-; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
-; If not, uses default sink
-sink = alsa_output.pci-0000_03_00.6.analog-stereo
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/pulseaudio]
 
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume =  %percentage%%
+label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted = 婢 muted
+label-muted = VOL muted
 label-muted-foreground = #666
 
 bar-volume-width = 10
-bar-volume-foreground-0 = ${colors.green}
-bar-volume-foreground-1 = ${colors.green}
-bar-volume-foreground-2 = ${colors.green}
-bar-volume-foreground-3 = ${colors.green}
-bar-volume-foreground-4 = ${colors.green}
-bar-volume-foreground-5 = ${colors.yellow}
-bar-volume-foreground-6 = ${colors.red}
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
@@ -728,7 +671,7 @@ bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground}
+bar-volume-empty-foreground = ${colors.foreground-alt}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -756,10 +699,9 @@ ramp-foreground = ${colors.foreground}
 [module/powermenu]
 type = custom/text
 
-content = 
+content = 
 content-foreground = ${color.cyan}
-
-click-left = ~/scripts/powermenu.sh &
+click-left = sh ~/scripts/powermenu.sh &
 
 [settings]
 screenchange-reload = true
