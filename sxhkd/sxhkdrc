@@ -3,7 +3,7 @@
 #######################
 
 # terminal emulator
-super + t
+alt + t
 	kitty
 
 # program launcher
@@ -12,7 +12,7 @@ super + Tab
 
 #run command
 super + r
-	$LAUNCHER -show run
+	rofi -show run
 
 #open text editor
 alt + v
@@ -31,15 +31,17 @@ ctrl + Print
 	scrot ~/'Images'/'Снимок экрана'
 
 # lock
-# super + shift + z
-#        betterlockscreen -l blur
+ super + shift + l
+        i3lock
 
+#change layout
 alt + shift
 		setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle
 
 #switch window 
-alt+Tab
+alt + Tab
 	rofi -show window
+
 #####################
 # BSPWM Keybindings #
 #####################
