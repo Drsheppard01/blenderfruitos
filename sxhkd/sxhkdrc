@@ -2,9 +2,9 @@
 # Program Keybindings #
 #######################
 
-# terminal emulator
-alt + t
-	kitty
+# open some programs
+alt + {t,b,v,f}
+	{kitty,firefox,code-oss,nautilus}
 
 # program launcher
 super + Tab
@@ -14,25 +14,13 @@ super + Tab
 super + r
 	rofi -show run
 
-#open text editor
-alt + v
-	code-oss
-
-#open browser
-alt + b
-	firefox
-
-#open file manager
-alt + f
-	nautilus
-
 #make screenshot
 ctrl + Print
-	scrot ~/'Images'/'Снимок экрана'
+	scrot 
 
-# lock
- super + shift + l
-        i3lock
+# lockscreen
+super + shift + l
+      sh /home/drheppard/scripts/powermenu.sh
 
 #change layout
 alt + shift
