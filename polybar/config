@@ -19,55 +19,28 @@
 ;; File Inclusion
 ; include an external file, like module file, etc.
 
-include-file = ~/.config/polybar/colors.ini
 include-file = ~/.config/polybar/spotify.ini
+include-file = ~/.config/polybar/colors.ini
 ;==========================================================
-
-;[colors]
-background = ${xrdb:color0}
-foreground = ${xrdb:color7}
-foreground-alt = ${xrdb:color2}
-primary = ${xrdb:color3}
-secondary = ${xrdb:color1}
-alert = ${xrdb:color5}
-
-[colors]
-;background = ${xrdb:color0}
-; if you want full transparency put background = #000000
-background = #aa121212
-foreground = ${xrdb:color7}
-;7
-red = ${xrdb:color1}
-;1
-green = ${xrdb:color2}
-;2
-yellow = ${xrdb:color3}
-;3
-blue = ${xrdb:color4}
-;4
-teal = ${xrdb:color5}
-;5
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [bar/mybar]
 enable-ipc = true
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 40
-offset-x = 1%
-offset-y = 1%
-radius-bottom = 12.0
-fixed-center = true
+height = 42
+;offset-x = 1%
+;offset-y = 1%
+radius = 12.0
+fixed-center = false
 
-background = ${colors.background}
+background = ${colors.black}
 ;background = "#00000000"
-line-size = 1.5
+line-size = 2
 
 border-left-size = 10
 border-right-size = 10
 ;border-bottom-size = 0
-;border-top-size = 10
+border-top-size = 10
 
 ;border-left-size = 1
 ;border-top-size = 1
@@ -75,17 +48,15 @@ border-right-size = 10
 ;border-bottom-size = 1
 ;border-color = ${colors.blue}
 
-padding-left = 2
+padding-left = 3
 padding-right = 3
 
 module-margin-left = 0
-module-margin-right = 1
+module-margin-right = 0
 
 font-0 = "Iosevka Nerd Font:size=10;4"
-font-1 = "Iosevka Nerd Font:size=10;3"
-font-2 = "feather:size=12;3"
-font-3 = "Terminus:size=10;3"
-font-4 = "waffle:size=10;3"
+font-1 = "Material-Design-Iconic-Font:size=12;3"
+font-2 = "waffle:size=12;3"
 
 modules-left = bspwm mod
 modules-center = date
@@ -111,19 +82,19 @@ cursor-scroll = ns-resize
 type = internal/bspwm
 pin-workspaces = false
 enable-click = true
-fuzzy-match = true
+fuzzy-match = false
 enable-scroll = false
 label-focused-font = 2
-label-focused = 
+label-focused = " "
 label-focused-foreground = #d90429
 label-focused-padding = 1
-label-occupied = 
+label-occupied = " "
 label-occupied-foreground = #eeeeee
 label-occupied-padding = 1
-label-urgent = 
+label-urgent = " "
 label-urgent-foreground = #eeeeee
 label-urgent-padding = 1
-label-empty = 
+label-empty = " "
 label-empty-foreground = #eeeeee
 label-empty-padding = 1
 
@@ -136,52 +107,52 @@ format = <label-mode>
 
 label-monocle = " Monocle "
 label-monocle-foreground = ${colors.foreground}
-label-monocle-background = ${colors.dark1}
+label-monocle-background = ${colors.teal}
 label-monocle-padding = 0
 
-label-tiled = " Tiled  "
+label-tiled = " Tiled "
 label-tiled-foreground = ${colors.foreground}
-label-tiled-background = ${colors.dark1}
+label-tiled-background = ${colors.red}
 label-tiled-padding = 0
 
-label-fullscreen = "Fullscreen  "
+label-fullscreen = " Fullscreen "
 label-fullscreen-foreground = ${colors.foreground}
-label-fullscreen-background = ${colors.dark1}
+label-fullscreen-background = ${colors.blue}
 label-fullscreen-padding = 0
 
-label-floating = "Floating  "
+label-floating = "Floating "
 label-floating-foreground = ${colors.foreground}
-label-floating-background = ${colors.dark1}
+label-floating-background = ${colors.pink}
 label-floating-padding = 0
 
-label-pseudotiled = "P-Tiled  "
+label-pseudotiled = " P-Tiled "
 label-pseudotiled-foreground = ${colors.foreground}
-label-pseudotiled-background = ${colors.dark1}
+label-pseudotiled-background = ${colors.lime}
 label-pseudotiled-padding = 0
 
-label-locked = "Locked  "
+label-locked = " Locked "
 label-locked-foreground = ${colors.foreground}
-label-locked-background = ${colors.dark1}
+label-locked-background = ${colors.green}
 label-locked-padding = 0
 
-label-sticky = "Sticky  "
+label-sticky = " Sticky "
 label-sticky-foreground = ${colors.foreground}
-label-sticky-background = ${colors.dark1}
+label-sticky-background = ${colors.amber}
 label-sticky-padding = 0
 
-label-marked = "Marked  "
+label-marked = " Marked "
 label-marked-foreground = ${colors.foreground}
-label-marked-background = ${colors.dark1}
+label-marked-background = ${colors.purple}
 label-marked-padding = 0
 
-label-private = "Private  "
+label-private = " Private "
 label-private-foreground = ${colors.foreground}
-label-private-background = ${colors.dark1}
+label-private-background = ${colors.indigo}
 label-private-padding = 0
 
 format-padding = 0
 format-foreground = ${colors.foreground}
-format-background = ${colors.dark1}
+format-background = ${colors.orange}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -202,8 +173,8 @@ blacklist-1 = scroll lock
 ;   <label-layout> (default)
 ;   <label-indicator> (default)
 format = <label-layout> <label-indicator>
-format-prefix = " "
-format-prefix-foreground = ${color.blue-gray}
+format-prefix = "  "
+format-prefix-foreground = ${colors.blue-gray}
 
 ; Available tokens:
 ;   %layout%
@@ -216,7 +187,7 @@ label-layout = "%layout%"
 ;   %name%
 ; Default: %name%
 label-indicator-on = "%name%"
-label-indicator-on-foreground = ${color.cyan}
+label-indicator-on-foreground = ${colors.cyan}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -246,12 +217,12 @@ fixed-values = true
 ;   <bar-used>
 ;   <ramp-capacity>
 format-mounted = <label-mounted>
-format-mounted-prefix = 
+format-mounted-prefix = "" 
 
 ; Available tags:
 ;   <label-unmounted> (default)
 format-unmounted = <label-unmounted>
-format-unmounted-prefix = 
+format-unmounted-prefix = ""
 
 ; Available tokens:
 ;   %mountpoint%
@@ -263,7 +234,7 @@ format-unmounted-prefix = 
 ;   %free%
 ;   %used%
 ; Default: %mountpoint% %percentage_free%%
-label-mounted = " %percentage_free%"
+label-mounted = " %percentage_free%%"
 
 ; Available tokens:
 ;   %mountpoint%
@@ -277,8 +248,8 @@ label-unmounted = " %mountpoint%: not mounted"
 ; format-online = <toggle> <label-song> 
 ; ;format-online =  <label-song> 
 ; ;alt icons =   
-; format-online-background = ${color.shade8}
-; format-online-foreground = ${color.txt}
+; format-online-background = ${colors.shade8}
+; format-online-foreground = ${colors.txt}
 ; format-online-padding = 2
 ; 
 ; icon-play = 喇
@@ -303,7 +274,7 @@ interval = 1
 ;   <ramp-coreload>
 ;;format = <label> <ramp-coreload>
 format = <label>
-format-prefix = 
+format-prefix = " "
 
 ; Available tokens:
 ;   %percentage% (default) - total cpu load averaged over all cores
@@ -333,7 +304,7 @@ interval = 1.0
 ;;date = %Y-%m-%d%
 
 ; Optional time format
-time = " %H:%M "
+time = " %H:%M"
 
 ; if `date-alt` or `time-alt` is defined, clicking
 ; the module will toggle between formats
@@ -369,7 +340,7 @@ interval = 1
 ;   <ramp-swap-used>
 ;   <ramp-swap-free>
 format = <label>
-format-prefix = 
+format-prefix = ""
 
 ; Available tokens:
 ;   %percentage_used% (default)
@@ -406,25 +377,24 @@ label = " %mb_used%"
 ; If you use both a wired and a wireless network, just add 2 module definitions. For example
 [module/wlan]
 type = internal/network
-interface = wlo1
-interval = 3.0
+interface = wlp7s0f3u2
+interval = 1.0
 
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %essid%
+format-connected = <label-connected>
+;format-connected-underline = #9f78e1
+label-connected = "%essid%"
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
+;format-disconnected = 
+format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+label-disconnected = "睊%Disconnected% "
+;label-disconnected-foreground = ${colors.green}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+;ramp-signal-0 = " "
+;ramp-signal-2 = " "
+;ramp-signal-3 = " "
+;ramp-signal-4 = " "
+;ramp-signal-foreground = ${colors.green}
 
 [module/eth]
 type = internal/network
@@ -497,7 +467,7 @@ format-volume = <ramp-volume> <bar-volume>
 ;   <bar-volume>
 format-muted = <label-muted>
 format-muted-prefix = 
-format-muted-prefix-foreground = ${color.red}
+format-muted-prefix-foreground = ${colors.red}
 
 ; Available tokens:
 ;   %percentage% (default)
@@ -506,13 +476,13 @@ label-volume = %percentage%%
 ; Available tokens:
 ;   %percentage% (default
 label-muted = " Muted"
-label-muted-foreground = ${color.sep}
+label-muted-foreground = ${colors.sep}
 
 ; Only applies if <ramp-volume> is used
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
-ramp-volume-foreground = ${color.blue}
+ramp-volume-foreground = ${colors.blue}
 
 ; Only applies if <bar-volume> is used
 bar-volume-format = "%fill%%indicator%%empty%"
@@ -520,20 +490,20 @@ bar-volume-width = 11
 bar-volume-gradient = false
 
 bar-volume-indicator = ${bar.indicator}
-bar-volume-indicator-foreground = ${color.foreground}
+bar-volume-indicator-foreground = ${colors.foreground}
 bar-volume-indicator-font = 2
 
 bar-volume-fill = ${bar.fill}
 bar-volume-fill-font = 2
-bar-volume-foreground-0 = ${color.green}
-bar-volume-foreground-1 = ${color.green}
-bar-volume-foreground-2 = ${color.yellow}
-bar-volume-foreground-3 = ${color.yellow}
-bar-volume-foreground-4 = ${color.red}
+bar-volume-foreground-0 = ${colors.green}
+bar-volume-foreground-1 = ${colors.green}
+bar-volume-foreground-2 = ${colors.yellow}
+bar-volume-foreground-3 = ${colors.yellow}
+bar-volume-foreground-4 = ${colors.red}
 
 bar-volume-empty = ${bar.empty}
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${color.sep}
+bar-volume-empty-foreground = ${colors.sep}
 
 ; If defined, it will replace <ramp-volume> when
 ; headphones are plugged in to `headphone_control_numid`
@@ -548,7 +518,7 @@ type = custom/script
 exec = ~/scripts/checkupdates.sh
 interval = 120
 format-prefix-foreground = #168ECA
-format-prefix = 
+format-prefix = " "
 label = "%output%"
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -578,7 +548,7 @@ ramp-1 = 
 ramp-2 = 
 ramp-3 = 
 ramp-4 = 
-ramp-foreground = ${color.lime}
+ramp-foreground = ${colors.lime}
 
 ; Only applies if <bar> is used
 bar-format = "%fill%%indicator%%empty%"
@@ -586,20 +556,20 @@ bar-width = 11
 bar-gradient = false
 
 bar-indicator = ${bar.indicator}
-bar-indicator-foreground = ${color.foreground}
+bar-indicator-foreground = ${colors.foreground}
 bar-indicator-font = 2
 
 bar-fill = ${bar.fill}
 bar-fill-font = 2
-bar-foreground-0 = ${color.green}
-bar-foreground-1 = ${color.green}
-bar-foreground-2 = ${color.yellow}
-bar-foreground-3 = ${color.yellow}
-bar-foreground-4 = ${color.red}
+bar-foreground-0 = ${colors.green}
+bar-foreground-1 = ${colors.green}
+bar-foreground-2 = ${colors.yellow}
+bar-foreground-3 = ${colors.yellow}
+bar-foreground-4 = ${colors.red}
 
 bar-empty = ${bar.empty}
 bar-empty-font = 2
-bar-empty-foreground = ${color.sep}
+bar-empty-foreground = ${colors.sep}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -607,25 +577,25 @@ bar-empty-foreground = ${color.sep}
 ;; ;-       rounded      -; ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-[module/rounded-left]
-type = custom/text
-content = %{T5}%{T-}
-content-foreground = ${color.bg}
+;[module/rounded-left]
+;type = custom/text
+;content = %{T5}%{T-}
+;content-foreground = ${colors.bg}
 
-[module/rounded-right]
-type = custom/text
-content = %{T5}%{T-}
-content-foreground = ${color.bg}
+;[module/rounded-right]
+;type = custom/text
+;content = %{T5}%{T-}
+;content-foreground = ${colors.bg}
 
-[module/rounded-right-colored]
-type = custom/text
-content = %{T5}%{T-}
-content-foreground = ${color.bgs}
+;[module/rounded-right-colored]
+;type = custom/text
+;content = %{T5}%{T-}
+;content-foreground = ${colors.bgs}
 
-[module/rounded-left-colored]
-type = custom/text
-content = %{T5}%{T-}
-content-foreground = ${color.bgs}
+;[module/rounded-left-colored]
+;type = custom/text
+;content = %{T5}%{T-}
+;content-foreground = ${colors.bgs}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ;-     rounded end    -; ;;
@@ -634,14 +604,14 @@ content-foreground = ${color.bgs}
 [module/mpris]
 type = custom/script
 icon = 契
-exec = ~/scripts/mpris_tail.py --icon-stopped '' --truncate-text '..' -f '%{A1:playerctl previous:} %{A}| {:artist:t18:{artist}:}{:artist: - :}{:t25:{title}:}'
+exec = python3 ~/scripts/mpris_tail.py --icon-stopped '' --truncate-text '..' -f '%{A1:playerctl previous:} %{A}| {:artist:t18:{artist}:}{:artist: - :}{:t25:{title}:}'
 tail = true
-format-background = ${colors.dark2}
+format-background = ${colors.green}
 format-foreground = ${colors.foreground}
 format-padding = 2
 label = "%output%"
-click-left = ~/scripts/mpris_tail.py play-pause &
-click-right = ~/scripts/mpris_tail.py next &
+click-left = python3 ~/scripts/mpris_tail.py play-pause &
+click-right =python3 ~/scripts/mpris_tail.py next &
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -650,13 +620,13 @@ click-right = ~/scripts/mpris_tail.py next &
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
-label-volume-foreground = ${root.foreground}
+label-volume = " VOL %percentage%%"
+label-volume-foreground = ${colors.foreground}
 
-label-muted = VOL muted
+label-muted = ﱝ
 label-muted-foreground = #666
 
-bar-volume-width = 10
+bar-volume-width = 8
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
 bar-volume-foreground-2 = #55aa55
@@ -666,12 +636,12 @@ bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
 bar-volume-indicator = |
-bar-volume-indicator-font = 2
+bar-volume-indicator-font = 12
 bar-volume-fill = ─
-bar-volume-fill-font = 2
+bar-volume-fill-font = 1
 bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+bar-volume-empty-font = 1
+bar-volume-empty-foreground = ${colors.green}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -697,11 +667,13 @@ ramp-foreground = ${colors.foreground}
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/powermenu]
-type = custom/text
+type = custom/script
+content = ""
+content-foreground = ${colors.accent}
 
-content = 
-content-foreground = ${color.cyan}
-click-left = sh ~/scripts/powermenu.sh &
+click-left = sh ~/scripts/powermenu.sh
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [settings]
 screenchange-reload = true
