@@ -1,8 +1,0 @@
-/** Basic config file **/
-
-configuration {
-  show-icons:         true;
-  icon-theme:         "Tela-circle-red";
-  theme:              "~/.config/rofi/colorful.rasi";
-
-  }
