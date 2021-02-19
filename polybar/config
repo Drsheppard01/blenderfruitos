@@ -56,11 +56,12 @@ module-margin-right = 0
 
 font-0 = "Iosevka Nerd Font:size=10;4"
 font-1 = "Material-Design-Iconic-Font:size=12;3"
-font-2 = "waffle:size=12;3"
+font-2 = "Design-Iconic-Font:size=12;3"
+font-3 = "Noto Emoji Regular:size=12;3"
 
 modules-left = bspwm mod
 modules-center = date
-modules-right = cpu memory filesystem keyboard wlan pulseaudio powermenu
+modules-right =  keyboard wlan pulseaudio powermenu
 
 ;tray-position = right
 ;tray-padding = 0
@@ -94,7 +95,7 @@ label-occupied-padding = 1
 label-urgent = " "
 label-urgent-foreground = #eeeeee
 label-urgent-padding = 1
-label-empty = " "
+label-empty = " "
 label-empty-foreground = #eeeeee
 label-empty-padding = 1
 
@@ -173,8 +174,8 @@ blacklist-1 = scroll lock
 ;   <label-layout> (default)
 ;   <label-indicator> (default)
 format = <label-layout> <label-indicator>
-format-prefix = "  "
-format-prefix-foreground = ${colors.blue-gray}
+format-prefix ="  " 
+format-prefix-foreground = ${colors.foreground}
 
 ; Available tokens:
 ;   %layout%
@@ -304,12 +305,12 @@ interval = 1.0
 ;;date = %Y-%m-%d%
 
 ; Optional time format
-time = " %H:%M"
+time = "  %H:%M "
 
 ; if `date-alt` or `time-alt` is defined, clicking
 ; the module will toggle between formats
 ;;date-alt = %A, %d %B %Y
-time-alt = " %a, %d %b %Y"
+time-alt = "  %a, %d %b %Y "
 
 ; Available tags:
 ;   <label> (default)
@@ -377,12 +378,12 @@ label = " %mb_used%"
 ; If you use both a wired and a wireless network, just add 2 module definitions. For example
 [module/wlan]
 type = internal/network
-interface = wlp7s0f3u2
+interface = wlp8s0f3u1
 interval = 1.0
 
 format-connected = <label-connected>
 ;format-connected-underline = #9f78e1
-label-connected = "%essid%"
+label-connected = " %essid%"
 
 ;format-disconnected = 
 format-disconnected = <label-disconnected>
@@ -515,12 +516,14 @@ ramp-headphones-0 = 
 
 [module/checkupdates]
 type = custom/script
-exec = ~/scripts/checkupdates.sh
+icon = 
+exec = sudo  sh ~/scripts/checkupdates.sh
+tail = true
 interval = 120
-format-prefix-foreground = #168ECA
-format-prefix = " "
+format-background = ${colors.blue}
+format-foreground = ${colors.foreground}
 label = "%output%"
-
+click-left = sh ~/scripts/checkupdates.sh
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/brightness]
@@ -620,10 +623,10 @@ click-right =python3 ~/scripts/mpris_tail.py next &
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = " VOL %percentage%%"
+label-volume = "  %percentage%%"
 label-volume-foreground = ${colors.foreground}
 
-label-muted = ﱝ
+label-muted = 婢
 label-muted-foreground = #666
 
 bar-volume-width = 8
@@ -637,9 +640,9 @@ bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 12
-bar-volume-fill = ─
+bar-volume-fill = 
 bar-volume-fill-font = 1
-bar-volume-empty = ─
+bar-volume-empty = 
 bar-volume-empty-font = 1
 bar-volume-empty-foreground = ${colors.green}
 
@@ -667,11 +670,42 @@ ramp-foreground = ${colors.foreground}
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/powermenu]
-type = custom/script
-content = ""
-content-foreground = ${colors.accent}
-
+type = custom/text
+content-background = ${colors.bg}
+content-foreground = ${colors.cyan}
+content = "  "
 click-left = sh ~/scripts/powermenu.sh
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+;[module/powermenu1]
+;type = custom/menu
+
+;expand-right = true
+
+;format-spacing = 1
+
+;label-open = 
+;label-open-foreground = ${colors.teal}
+;label-close =  cancel
+;label-close-foreground = ${colors.yellow}
+;label-separator = |
+;label-separator-foreground = ${colors.foreground}
+
+;menu-0-0 = reboot
+;menu-0-0-exec = menu-open-1
+;menu-0-1 = power off
+;menu-0-1-exec = menu-open-2
+
+;menu-1-0 = cancel
+;menu-1-0-exec = menu-open-0
+;menu-1-1 = reboot
+;menu-1-1-exec = sudo reboot
+
+;menu-2-0 = power off
+;menu-2-0-exec = sudo poweroff
+;menu-2-1 = cancel
+;menu-2-1-exec = menu-open-0
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
