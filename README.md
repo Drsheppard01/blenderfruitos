@@ -2,7 +2,7 @@
 
 Config minimal Solus
 
-![Screenshot](blenderfruitos/+2021-02-23_11-43-37.png)
+![Screenshot](+2021-02-23_11-43-37.png)
 
 Program | Name
 ------------ | -------------
