@@ -2,7 +2,7 @@
 
 Config minimal Solus
 
-<a name="screenshot">![Screenshot](blenderfruitos/+2021-02-23_11-43-37.png)</a>
+![Screenshot](blenderfruitos/+2021-02-23_11-43-37.png)
 
 Program | Name
 ------------ | -------------
