@@ -19,7 +19,6 @@
 ;; File Inclusion
 ; include an external file, like module file, etc.
 
-include-file = ~/.config/polybar/spotify.ini
 include-file = ~/.config/polybar/colors.ini
 ;==========================================================
 
@@ -59,9 +58,9 @@ font-1 = "Material-Design-Iconic-Font:size=12;3"
 font-2 = "Design-Iconic-Font:size=12;3"
 font-3 = "Noto Emoji Regular:size=12;3"
 
-modules-left = bspwm mod
+modules-left = launcher bspwm mod
 modules-center = date
-modules-right =  keyboard wlan pulseaudio powermenu
+modules-right = keyboard wlan volume powermenu
 
 ;tray-position = right
 ;tray-padding = 0
@@ -157,9 +156,9 @@ format-background = ${colors.orange}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-[module/xwindow]
+[module/title]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title%
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -174,21 +173,41 @@ blacklist-1 = scroll lock
 ;   <label-layout> (default)
 ;   <label-indicator> (default)
 format = <label-layout> <label-indicator>
-format-prefix ="  " 
-format-prefix-foreground = ${colors.foreground}
+format-prefix = "  "
+format-prefix-foreground = ${colors.white}
 
 ; Available tokens:
 ;   %layout%
 ;   %name%
 ;   %number%
 ; Default: %layout%
-label-layout = "%layout%"
+label-layout = " %layout%"
 
 ; Available tokens:
 ;   %name%
 ; Default: %name%
 label-indicator-on = "%name%"
 label-indicator-on-foreground = ${colors.cyan}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/launcher]
+type = custom/text
+content = 
+
+; "content" has the same properties as "format-NAME"
+content-background = ${colors.black}
+content-foreground = ${colors.yellow}
+content-padding = 2
+
+; "click-(left|middle|right)" will be executed using "/usr/bin/env sh -c $COMMAND"
+click-left = sh ~/scripts/launcher.sh &
+;;click-middle = ~/.config/polybar/material/scripts/launcher-full
+; click-right = ~/.config/polybar/material/scripts/color-switch.sh &
+
+; "scroll-(up|down)" will be executed using "/usr/bin/env sh -c $COMMAND"
+;;scroll-up = ~/.config/polybar/material/scripts/launcher.sh &
+;;scroll-down = ~/.config/polybar/material/scripts/color-switch.sh &
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -305,12 +324,12 @@ interval = 1.0
 ;;date = %Y-%m-%d%
 
 ; Optional time format
-time = "  %H:%M "
+time = "   %H:%M "
 
 ; if `date-alt` or `time-alt` is defined, clicking
 ; the module will toggle between formats
 ;;date-alt = %A, %d %B %Y
-time-alt = "  %a, %d %b %Y "
+time-alt = "   %a, %d %b %Y "
 
 ; Available tags:
 ;   <label> (default)
@@ -383,12 +402,12 @@ interval = 1.0
 
 format-connected = <label-connected>
 ;format-connected-underline = #9f78e1
-label-connected = " %essid%"
+label-connected = "  %essid% "
 
 ;format-disconnected = 
 format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
-label-disconnected = "睊%Disconnected% "
+label-disconnected = " 睊%Disconnected% "
 ;label-disconnected-foreground = ${colors.green}
 
 ;ramp-signal-0 = " "
@@ -396,6 +415,8 @@ label-disconnected = "睊%Disconnected% "
 ;ramp-signal-3 = " "
 ;ramp-signal-4 = " "
 ;ramp-signal-foreground = ${colors.green}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/eth]
 type = internal/network
@@ -516,8 +537,8 @@ ramp-headphones-0 = 
 
 [module/checkupdates]
 type = custom/script
-icon = 
-exec = sudo  sh ~/scripts/checkupdates.sh
+icon = "ﮮ"
+exec = sh ~/scripts/checkupdates.sh
 tail = true
 interval = 120
 format-background = ${colors.blue}
@@ -618,18 +639,18 @@ click-right =python3 ~/scripts/mpris_tail.py next &
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-[module/pulseaudio]
+[module/volume]
 
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = "  %percentage%%"
+label-volume = " %percentage%%"
 label-volume-foreground = ${colors.foreground}
 
-label-muted = 婢
+label-muted = " "
 label-muted-foreground = #666
 
-bar-volume-width = 8
+bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
 bar-volume-foreground-2 = #55aa55
@@ -671,41 +692,10 @@ ramp-foreground = ${colors.foreground}
 
 [module/powermenu]
 type = custom/text
-content-background = ${colors.bg}
+content-background = ${colors.black}
 content-foreground = ${colors.cyan}
 content = "  "
 click-left = sh ~/scripts/powermenu.sh
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-;[module/powermenu1]
-;type = custom/menu
-
-;expand-right = true
-
-;format-spacing = 1
-
-;label-open = 
-;label-open-foreground = ${colors.teal}
-;label-close =  cancel
-;label-close-foreground = ${colors.yellow}
-;label-separator = |
-;label-separator-foreground = ${colors.foreground}
-
-;menu-0-0 = reboot
-;menu-0-0-exec = menu-open-1
-;menu-0-1 = power off
-;menu-0-1-exec = menu-open-2
-
-;menu-1-0 = cancel
-;menu-1-0-exec = menu-open-0
-;menu-1-1 = reboot
-;menu-1-1-exec = sudo reboot
-
-;menu-2-0 = power off
-;menu-2-0-exec = sudo poweroff
-;menu-2-1 = cancel
-;menu-2-1-exec = menu-open-0
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
