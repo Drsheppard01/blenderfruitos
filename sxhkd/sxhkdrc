@@ -3,8 +3,8 @@
 #######################
 
 # open some programs
-alt + {t,b,v,f}
-	{kitty,firefox,code-oss,nautilus}
+alt + {t,b,v,f,m}
+	{kitty,google-chrome-stable,code-oss,nautilus}
 
 # program launcher
 super + Tab
@@ -15,8 +15,8 @@ super + r
 	rofi -show run
 
 #make screenshot
-ctrl + Print
-	scrot 
+ctrl+Print
+	scrot "$HOME/$(date +%Y-%m-%d_%H-%M-%S).png"
 
 # lockscreen
 super + shift + l
