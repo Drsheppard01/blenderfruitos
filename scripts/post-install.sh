@@ -1,4 +1,4 @@
-
+#!/bin/bash
 
 # Update full
 sudo eopkg up -y
