@@ -40,8 +40,8 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Orchis-compact'
 ### Install icons ###
 
 wget https://github.com/vinceliuice/Tela-circle-icon-theme/archive/2020-11-29.tar.gz
-tar xvzf 2020-11-29.tar.gz && cd Tela-circle-icon-theme-2020-11-29 && sudo sh install.sh
-gsettings set org.gnome.desktop.interface icon-theme 'Tela-circle'
+tar xvzf 2020-11-29.tar.gz && cd Tela-circle-icon-theme-2020-11-29 && sudo sh install.sh -c blue
+gsettings set org.gnome.desktop.interface icon-theme 'Tela-circle-blue'
 
 ### Raven ###
 
