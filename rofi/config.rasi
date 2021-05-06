@@ -2,7 +2,7 @@
 
 configuration {
   show-icons:         true;
-  icon-theme:         "Tela-circle-red";
+  icon-theme:         "Tela-circle-blue";
   theme:              "~/.config/rofi/colorful.rasi";
 
   }
