@@ -10,7 +10,7 @@
 configuration {
 	font:							"FantasqueSansMono Nerd Font 10";
     show-icons:                     false;
-	icon-theme: 					"Papirus";
+	icon-theme: 					"Tela-circle-blue";
     drun-display-format:            "{name}";
     disable-history:                false;
     fullscreen:                     false;
