@@ -2,7 +2,7 @@
 
 Config minimal Solus
 
-[Screenshot](https://github.com/georgybog/blenderfruitos/blob/779874077aa2d1b2cedaef77426294231d9bd8c2/screenshot_1.png)
+[Screenshot](https://raw.githubusercontent.com/georgybog/blenderfruitos/779874077aa2d1b2cedaef77426294231d9bd8c2/screenshot_1.png)
 
 Program | Name
 ------------ | -------------
