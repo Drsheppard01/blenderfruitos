@@ -1,24 +1,25 @@
-/* Message Dialog */
+/* Confirm Dialog */
 
 @import "colors.rasi"
 
 * {
-    background-color:       @background;
-    text-color:             @foreground;
-	font:				 	"FantasqueSansMono Nerd Font 12";
+    background-color:       @bg;
+    text-color:             @fg;
+	font:				 	"Iosevka Nerd Font 10";
 }
 
 window {
-    width:      			360px;
-    padding:    			25px;
-    border:					1px;
-    border-radius:          0px;
-    border-color:           @border;
-    location:               center;
-    y-offset:               -2em;
+    width:      			230px;
+    padding:    			20px;
+    border:					0px;
+    border-radius:          15px;
+    border-color:           @ac;
+    location:               southwest;
+    x-offset:               25px;
+    y-offset:               -95px;
 }
 
 entry {
     expand: 				true;
-    text-color:				@border;
+    text-color:				@ac;
 }

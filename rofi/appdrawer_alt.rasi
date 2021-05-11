@@ -10,7 +10,7 @@
 configuration {
 	font:							"Iosevka Nerd Font Complete 12";
     show-icons:                     true;
-	icon-theme: 					"Tela-circle-red";
+	icon-theme: 					"Tela-circle-blue";
     display-drun: 					"";
     drun-display-format:            "{name}";
     disable-history:                false;
