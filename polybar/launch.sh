@@ -1,4 +1,4 @@
-#!/usr/bin/env bash.
+#!/usr/bin/bash.
 
 # Terminate already running bar instances
 killall -q polybar
@@ -7,6 +7,7 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch the bar
-polybar -q mybar -c ~/.config/polybar/config.ini
-
-echo "Polybar launched..."
+polybar -q main -c ~/.config/polybar/config.ini &
+polybar -q spotifybar -c ~/.config/polybar/spotify.ini &
+polybar -q newsbar -c ~/.config/polybar/news.ini 
+echo "Bars launched...."
