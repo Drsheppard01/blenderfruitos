@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/sh
 
 ## Author  : Aditya Shakya
 ## Mail    : adi1090x@gmail.com
@@ -11,11 +11,11 @@ uptime=$(uptime -p | sed -e 's/up //g')
 rofi_command="rofi -theme $dir/powermenu.rasi"
 
 # Options
-shutdown="  Shutdown"
-reboot="  Restart"
-lock=" Lock"
-suspend="  Sleep"
-logout="  Logout"
+shutdown=" Shutdown"
+reboot="勒 Restart"
+lock=" Lock"
+suspend="鈴 Sleep"
+logout=" Logout"
 
 # Confirmation
 confirm_exit() {
