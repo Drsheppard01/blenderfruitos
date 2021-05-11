@@ -2,7 +2,7 @@
 
 Config minimal Solus
 
-[Screenshot](Screenshot_1.png)
+[Screenshot](screenshot_1.png)
 
 Program | Name
 ------------ | -------------
