@@ -2,7 +2,7 @@
 
 Config minimal Solus
 
-![Screenshot](screenshot_1.png)
+![Screenshot](Снимок экрана от 2021-05-16 18-50-12.png)
 
 Program | Name
 ------------ | -------------
