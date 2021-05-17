@@ -41,9 +41,9 @@ bspc rule -a Rofi state=floating follow=on center=true
 bspc desktop -f 1
 
 # AUTOSTART
-sh /home/georgybog/.config/scripts/feh_bing_wallpaper.sh
+sh /home/georgybog/.fehbg &
 sh /home/georgybog/.config/polybar/launch.sh &
 dunst_run &
 sh /home/georgybog/.config/picom/picom.sh &
 
-setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle
+setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
