@@ -1,0 +1,121 @@
+[global]
+
+#--------------------------
+#           Display
+#--------------------------
+
+    monitor =                       0
+    follow =                        mouse
+    geometry =                      "400x5-20+90"
+    indicate_hidden =               yes
+    shrink =                        no
+    transparency =                  0
+    notification_height =           0
+    padding =                       25
+    horizontal_padding =            25
+    frame_width =                   0
+    frame_color =                   "#EDEFF1"
+    separator_height =              2
+    separator_color =               #916a9d
+    sort = yes
+    idle_threshold =                120
+
+#--------------------------
+#           Text
+#--------------------------
+
+    font =                          Agave Regular
+    line_height =                   17
+    markup =                        full
+    format =                        "<span font_desc='Monaco 11' weight='bold' foreground='#916a9d'>%s</span>\n%b"
+    alignment = center
+    vertical_alignment =            center
+    show_age_threshold =            60
+    word_wrap =                     yes
+
+    ignore_newline =                no
+    stack_duplicates =              true
+    hide_duplicate_count =          false
+    show_indicators =               no
+
+#--------------------------
+#           Icons
+#--------------------------
+    icon_position =                 left
+    min_icon_size =                 48
+    max_icon_size =                 96
+    
+    # Tela-circle-blue
+     icon_path =                   /usr/share/icons/Tela-circle-blue/16/actions:/usr/share/icons/Tela-circle-blue/16/apps:/usr/share/icons/Tela-circle-blue/16/devices:/usr/share/icons/Tela-circle-blue/16/mimetypes:/usr/share/icons/Tela-circle-blue/16/panel:/usr/share/icons/Tela-circle-blue/16/places:/usr/share/icons/Tela-circle-blue/16/status:/usr/share/icons/Tela-circle-blue/22/actions:/usr/share/icons/Tela-circle-blue/22/devices:/usr/share/icons/Tela-circle-blue/22/emblems:/usr/share/icons/Tela-circle-blue/22/mimetypes:/usr/share/icons/Tela-circle-blue/22/panel:/usr/share/icons/Tela-circle-blue/24/actions:/usr/share/icons/Tela-circle-blue/24/animations:/usr/share/icons/Tela-circle-blue/24/devices:/usr/share/icons/Tela-circle-blue/32/devices:/usr/share/icons/Tela-circle-blue/24/panel:/usr/share/icons/Tela-circle-blue/24/places:/usr/share/icons/Tela-circle-blue/22/places:/usr/share/icons/Tela-circle-blue/scalable/apps:/usr/share/icons/Tela-circle-blue/scalable/devices:/usr/share/icons/Tela-circle-blue/scalable/mimetypes:/usr/share/icons/Tela-circle-blue/scalable/places:/usr/share/icons/Tela-circle-blue/symbolic/actions:/usr/share/icons/Tela-circle-blue/symbolic/apps:/usr/share/icons/Tela-circle-blue/symbolic/categories/:/usr/share/icons/Tela-circle-blue/symbolic/devices:/usr/share/icons/Tela-circle-blue/symbolic/emblems:/usr/share/icons/Tela-circle-blue/symbolic/emotes:/usr/share/icons/Tela-circle-blue/symbolic/mimetypes:/usr/share/icons/Tela-circle-blue/symbolic/places:/usr/share/icons/Tela-circle-blue/symbolic/status
+
+#--------------------------
+#           History
+#--------------------------
+
+    sticky_history =                yes
+    history_length =                20
+    
+#--------------------------
+#       Misc/Advanced 
+#--------------------------
+    dmenu =                         /usr/bin/dmenu -p dunst:
+    browser =                       firefox
+    always_run_script =             true
+    title =                         Dunst
+    class =                         Dunst
+
+    startup_notification =          false
+
+    verbosity =                     mesg
+
+    # Picom manage this
+    corner_radius =                 0
+
+    ignore_dbusclose =              false
+
+    ### Legacy
+
+    force_xinerama =                false
+
+    ### mouse
+    mouse_left_click =              close_current
+    mouse_right_click =             do_action, close_current
+    mouse_middle_click =            close_all
+
+#--------------------------
+#    Additional sections 
+#-------------------------- 
+
+    [experimental]
+        per_monitor_dpi =           false
+
+    [shortcuts]
+        close =                     ctrl+space
+        close_all =                 ctrl+shift+space
+        context =                   ctrl+shift+period
+
+    [urgency_low]
+        background =                "#EDEFF1"
+        foreground =                "#1D344F"
+        highlight =                 "#87A5BF"
+        timeout =                   8
+
+    [urgency_normal]
+        background =                "#EDEFF1"
+        foreground =                "#1D344F"
+        highlight =                 "#87A5BF"
+        timeout =                   8
+
+    [urgency_critical]
+        background =                "#EDEFF1"
+        foreground =                "#1D344F"
+        highlight =                 "#87A5BF"
+        timeout =                   8
+
+# Modify spectacle screenshot notification to show only the summary
+    [Spectacle]
+        appname =                  gnome-screenshot
+        format =                    "<span font_desc='Iosevka 11' weight='bold' foreground='#916a9d'>%s</span>"
+
+
+# vim: ft=cfg
