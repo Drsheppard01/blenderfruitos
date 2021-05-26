@@ -28,7 +28,7 @@ confirm_exit() {
 
 # Message
 msg() {
-	rofi -theme "$dir/message.rasi" -e "Напиши да/нет  -  yes / y / no / n"
+	rofi -theme "$dir/message.rasi" -e "ВСТАТЬ И ВЫЙТИ!!!"
 }
 
 # Variable passed to rofi
