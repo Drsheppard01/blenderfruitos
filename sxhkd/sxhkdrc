@@ -3,8 +3,8 @@
 #######################
 
 # open some programs
-alt + {t,b,v,f,m}
-	{kitty,google-chrome-stable,code-oss,nautilus}
+alt + {k,f,c,m}
+	{kitty,firefox,caja,kitty micro}
 
 # program launcher
 super + Tab
@@ -16,15 +16,15 @@ super + r
 
 #make screenshot
 ctrl+Print
-	scrot "$HOME/$(date +%Y-%m-%d_%H-%M-%S).png"
+	mate-screenshot
 
-# lockscreen
-super + shift + l
-      sh /home/drheppard/scripts/powermenu.sh
+#powermenu
+alt + @F4
+      sh ~/scripts/powermenu.sh
 
 #change layout
-alt + shift
-		setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle
+super + Space
+		setxkbmap -model pc105 -layout us,ru -option grp::win_space_toggle
 
 #switch window 
 alt + Tab
