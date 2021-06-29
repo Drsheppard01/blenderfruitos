@@ -18,7 +18,7 @@
 # Whether to set CPU% on a process to be based on the total CPU or just current usage.
 #current_usage = false
 # Whether to group processes with the same name together by default.
-# group_processes = true
+#group_processes = false
 # Whether to make process searching case sensitive by default.
 #case_sensitive = false
 # Whether to make process searching look for matching the entire word by default.
@@ -47,12 +47,24 @@
 #hide_table_gap = false
 # Disable mouse clicks
 #disable_click = false
-# Built-in themes.  Valid values are "default", "default-light", "gruvbox", "gruvbox-light"
-#color = "default"
+# Built-in themes.  Valid values are "default", "default-light", "gruvbox", "gruvbox-light", "nord", "nord-light"
+color = "nord"
 # Show memory values in the processes widget as values by default
 #mem_as_value = false
 # Show tree mode by default in the processes widget.
 tree = true
+# Shows an indicator in table widgets tracking where in the list you are.
+#show_table_scroll_position = false
+# Show processes as their commands by default in the process widget.
+#process_command = false
+# Displays the network widget with binary prefixes.
+#network_use_binary_prefix = false
+# Displays the network widget using bytes.
+#network_use_bytes = false
+# Displays the network widget with a log scale.
+#network_use_log = false
+# Hides advanced options to stop a process on Unix-like systems.
+#disable_advanced_kill = false
 
 # These are all the components that support custom theming.  Note that colour support
 # will depend on terminal support.
@@ -100,38 +112,54 @@ tree = true
 # All layout components have a ratio value - if this is not set, then it defaults to 1. 
 # The default widget layout:
 [[row]]
+  ratio=40
   [[row.child]]
-  ratio=1
   type="proc"
 [[row]]
-ratio=2
+    ratio=30
     [[row.child]]
-    ratio=4
-	[[row.child.child]]
-    type="cpu"
-	[[row.child.child]]
-    type="mem"
-    [[row.child.child]]
-    type="net"
-[[row]]
-ratio=4
+      ratio=4
+	  [[row.child.child]]
+      type="mem"
+      [[row.child.child]]
+      type="net"
+      [[row.child.child]]
+      type="cpu"
     [[row.child]]
-     type="disk"
-    [[row.child]]
-    type="temp" 
+      ratio=3
+      [[row.child.child]]
+        type="temp"
+      [[row.child.child]]
+        type="disk"
 #    default=true
 
 
-# Filters - you can hide specific temperature and disks using filters.  This is admittedly a bit
-# hard to use as of now, and there is a planned interface for managing this in the future:
-[disk_filter]
-is_list_ignored = false
-list = ["/snap/" ]
+# Filters - you can hide specific temperature sensors, network interfaces, and disks using filters.  This is admittedly
+# a bit hard to use as of now, and there is a planned in-app interface for managing this in the future:
+#[disk_filter]
+#is_list_ignored = true
+#list = ["/dev/sda\\d+", "/dev/nvme0n1p2"]
 #regex = true
 #case_sensitive = false
+#whole_word = false
+
+#[mount_filter]
+#is_list_ignored = true
+#list = ["/mnt/.*", "/boot"]
+#regex = true
+#case_sensitive = false
+#whole_word = false
 
 #[temp_filter]
-#is_list_ignored = false
+#is_list_ignored = true
 #list = ["cpu", "wifi"]
 #regex = false
 #case_sensitive = false
+#whole_word = false
+
+#[net_filter]
+#is_list_ignored = true
+#list = ["virbr0.*"]
+#regex = true
+#case_sensitive = false
+#whole_word = false
