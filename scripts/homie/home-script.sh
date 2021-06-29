@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#  Name scipt  Blenderfruit
+#  Release date: 2021-30-06
+#  Version: 2.0
+#  Copyright (C) Georgy Boganov | georg.b2014@outlook.com
+
 ### Update full system ###
 
 echo 'Выполняется обновление системы'
