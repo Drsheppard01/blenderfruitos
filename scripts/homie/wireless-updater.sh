@@ -3,7 +3,7 @@
 #  Name scipt  Wireless-updater
 #  Release date: 2021-03-15
 #  Version: 1.0
-#  Copyright (C) Georgy Boganov | georg.b2014@outlook.com
+#  Copyright (C) Georgii Bogdanov | GBOG@protonmail.com
 
 git clone https://github.com/gordboy/rtl8812au-5.9.3.2.git
 cd rtl8812au-5.9.3.2
