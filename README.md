@@ -10,7 +10,7 @@ BSPWM
 Software | Name
 ------------ | -------------
 Window Manager | [bspwm](https://github.com/baskerville/bspwm)
-Compositor | [Picom](https://github.com/yushui/picom)
+Compositor | [Picom](https://github.com/yshui/picom)
 Bar | [Polybar](https://github.com/Polybar/polybar)
 Launcher | [Rofi](https://github.com/davatorium/rofi)
 Notifications | [Dunst](https://github.com/dunst-project/dunst)
