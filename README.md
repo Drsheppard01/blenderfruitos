@@ -36,3 +36,5 @@ credits:
 * [Nicola Vitale](https://github.com/nivit) -  [RSS implement in Polybar](https://github.com/nivit/polybar-module-news)
 * [Sindre Sorhus](https://github.com/sindresorhus) - [Pure](https://github.com/sindresorhus/pure)
 * [Kovid Goyal](https://github.com/kovidgoyal) - [kitty](https://github.com/kovidgoyal/kitty) and [Calibre](https://github.com/kovidgoyal/calibre)
+* [Clement Tsang](https://github.com/ClementTsang) - [bottom](https://github.com/ClementTsang/bottom)
+* 
