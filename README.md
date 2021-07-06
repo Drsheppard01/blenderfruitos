@@ -3,6 +3,7 @@
 Config minimal Solus
 
 ![Screenshot](screenshot_2.png)
+![Screenshot Budgie](https://i.imgur.com/3Mq1OtB.png)
 
 Program | Name
 ------------ | -------------
