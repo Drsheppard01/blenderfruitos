@@ -29,4 +29,10 @@ Media | [Spotify](https://www.spotify.com) and [VLC](http://www.videolan.org/vlc
 Terminal | [kitty](https://sw.kovidgoyal.net/kitty/)
 Shell | [ZSH](https://www.zsh.org) with [Oh-my-zsh](https://ohmyz.sh) and [pure prompt](https://github.com/sindresorhus/pure)
 
-credits: [Aditya Shakya](https://github.com/adi1090x) - thank you for beautiful template settings Rofi and Polybar, [Prayag Savsani](https://github.com/PrayagS/) - thank for [spotify module for polybar](https://github.com/PrayagS/polybar-spotify),  [Nicola Vitale](https://github.com/nivit) - thanks for [RSS implement in Polybar](https://github.com/nivit/polybar-module-news), [Solus](https://getsol.us/download) - thank [Solus Team](https://getsol.us/solus/team/) for best Linux Distro, [Alex Creio](https://github.com/creio) for magnificent settings sxhkd and bspwm
+credits: 
+* [Solus](https://getsol.us/download) - thank [Solus Team](https://getsol.us/solus/team/) for best Linux Distro
+* [Aditya Shakya](https://github.com/adi1090x) - Rofi and Polybar
+* [Prayag Savsani](https://github.com/PrayagS/) -  [spotify module for polybar](https://github.com/PrayagS/polybar-spotify)
+* [Nicola Vitale](https://github.com/nivit) -  [RSS implement in Polybar](https://github.com/nivit/polybar-module-news)
+* [Sindre Sorhus](https://github.com/sindresorhus) - [Pure](https://github.com/sindresorhus/pure)
+* [Kovid Goyal](https://github.com/kovidgoyal) - [kitty](https://github.com/kovidgoyal/kitty) and [Calibre](https://github.com/kovidgoyal/calibre)
