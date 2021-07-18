@@ -34,19 +34,13 @@ sudo modprobe 8812au
 
 echo 'Удаляю предустановленные приложения'
 
-sudo eopkg rmf gnome-photos gnome-terminal eog evince gnome-mpv rhythmbox hexchat thunderbird seahorse firefox
+sudo eopkg rmf gnome-photos gnome-terminal eog evince gnome-mpv rhythmbox hexchat thunderbird seahorse firefox gnome-system-monitor
 
 ### Install some apps ###
 
 echo 'Установливаю необходимые приложения'
 
-sudo eopkg it vlc telegram shotwell kitty opera-stable lsd neofetch micro
-
-### Install VMWare Horizon Client ###
-
-echo 'Установливаю Horizon для работы'
-
-sh -c "$(wget https://download3.vmware.com/software/view/viewclients/CART22FQ1/VMware-Horizon-Client-2103-8.2.0-17742757.x64.bundle)"
+sudo eopkg it vlc telegram shotwell kitty opera-stable lsd neofetch micro bottom
 
 ### Install Zoom from Flatpak
 
