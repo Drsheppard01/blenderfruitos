@@ -19,7 +19,7 @@ sudo eopkg it -y -c system.devel
 
 ### Install wi-fi driver ###
 
-echo 'Установливаю Wi-Fi драйвер'
+echo 'Устанавливаю Wi-Fi драйвер'
 
 git clone https://github.com/gordboy/rtl8812au-5.9.3.2.git
 cd rtl8812au-5.9.3.2
@@ -38,7 +38,7 @@ sudo eopkg rmf gnome-photos gnome-terminal eog evince gnome-mpv rhythmbox hexcha
 
 ### Install some apps ###
 
-echo 'Установливаю необходимые приложения'
+echo 'Устанавливаю необходимые приложения'
 
 sudo eopkg it vlc telegram shotwell kitty opera-stable lsd neofetch micro bottom
 
@@ -68,7 +68,7 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Orchis-compact'
 
 ### Install icons ###
 
-echo 'Установливаю иконки'
+echo 'Устанавливаю иконки'
 
 wget https://github.com/vinceliuice/Tela-circle-icon-theme/archive/2020-11-29.tar.gz
 tar xvzf 2020-11-29.tar.gz && cd /2020-11-29/Tela-circle-icon-theme-2020-11-29 && sudo sh install.sh -c blue
@@ -82,7 +82,7 @@ gsettings set com.solus-project.budgie-raven show-power-strip true
 
 ### Zsh ###
 
-echo 'Меню Bash на zsh'
+echo 'Меняю Bash на zsh'
 
 sudo eopkg it zsh zsh-autosuggestions zsh-syntax-highlighting
 sudo chsh -s /bin/zsh $(whoami)
