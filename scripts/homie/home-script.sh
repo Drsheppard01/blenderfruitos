@@ -52,7 +52,7 @@ flatpak install flathub us.zoom.Zoom
 
 ### Install cursor ###
 
-echo 'Установливаю курсор'
+echo 'Устанавливаю курсор'
 
 wget https://github.com/ful1e5/Bibata_Cursor/releases/download/v1.1.0/Bibata-Modern-Classic.tar.gz
 tar xvzf Bibata-Modern-Classic.tar.gz && sudo cp -r ~/Bibata-Modern-Classic /usr/share/icons/
