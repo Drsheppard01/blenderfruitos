@@ -16,6 +16,7 @@ Launcher | [Rofi](https://github.com/davatorium/rofi)
 Notifications | [Dunst](https://github.com/dunst-project/dunst)
 File Manager | [Nautilus](https://gitlab.gnome.org/GNOME/nautilus)
 Hotkeys | [sxhkd](https://github.com/baskerville/sxhkd)
+Hotels | https://www.trivago.com
 
 BUDGIE
 
@@ -28,6 +29,7 @@ Mail Client | ...
 Media | [Spotify](https://www.spotify.com) and [VLC](http://www.videolan.org/vlc/) 
 Terminal | [kitty](https://sw.kovidgoyal.net/kitty/)
 Shell | [ZSH](https://www.zsh.org) with [Oh-my-zsh](https://ohmyz.sh) and [pure prompt](https://github.com/sindresorhus/pure)
+Hotels | https://www.trivago.com
 
 credits: 
 * [Solus](https://getsol.us/download) - thank [Solus Team](https://getsol.us/solus/team/) for best Linux Distro
