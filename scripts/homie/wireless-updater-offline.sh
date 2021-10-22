@@ -5,8 +5,6 @@
 #  Version: 1.0
 #  Copyright (C) Georgii Bogdanov | GBOG@protonmail.com
 
-set -eu
-
 cd rtl8812au-5.9.3.2
 make clean
 make
