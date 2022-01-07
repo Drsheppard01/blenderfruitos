@@ -15,7 +15,7 @@ sudo eopkg up -y
 
 echo 'Устанавливаю пакетов для разработчика'
 
-sudo eopkg it -y -c system.devel
+sudo eopkg it -y -c system.devel git
 
 ### Install wi-fi driver ###
 
@@ -84,6 +84,6 @@ gsettings set com.solus-project.budgie-raven show-power-strip true
 
 echo 'Меняю Bash на zsh'
 
-sudo eopkg it zsh zsh-autosuggestions zsh-syntax-highlighting
+sudo eopkg it zsh
 sudo chsh -s /bin/zsh $(whoami)
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
