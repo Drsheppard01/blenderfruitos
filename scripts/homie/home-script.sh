@@ -42,6 +42,14 @@ echo 'Устанавливаю необходимые приложения'
 
 sudo eopkg it vlc telegram shotwell kitty opera-stable lsd neofetch micro bottom
 
+### Install GDU ###
+
+echo 'Устанавливаю GDU'
+
+curl -L https://github.com/dundee/gdu/releases/latest/download/gdu_linux_amd64.tgz | tar xz
+chmod +x gdu_linux_amd64
+sudo mv gdu_linux_amd64 /usr/bin/gdu
+
 ### Install Zoom from Flatpak
 
 echo 'Устанавливаю Zoom'
