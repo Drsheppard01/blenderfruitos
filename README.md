@@ -33,7 +33,8 @@ Hotels | https://www.trivago.com
 
 
 OPENBOX
-
+Software | Name
+------------ | -------------
 Window Manager | [bspwm](https://github.com/baskerville/bspwm)
 Compositor | [Picom](https://github.com/yshui/picom)
 Bar | [tint2](https://gitlab.com/o9000/tint2)
