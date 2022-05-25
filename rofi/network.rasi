@@ -1,6 +1,6 @@
 configuration {
-	font:							"Inter 12";
-    show-icons:                     false;
+	font:                      		"Inter 12";
+	show-icons:                     false;
     disable-history:                false;
 	sidebar-mode: 					false;
 }
@@ -9,70 +9,65 @@ configuration {
 
 window {
     transparency:                   "real";
-    background-color:               @background;
-    text-color:                     @foreground;
-    border-radius:                  20px;
-    border-color:					@accent;
-    height:                         28.5%;
-    width:                          60%;
+    border-radius:                  12px;
     location:                       center;
-    x-offset:                       0;
-    y-offset:                       0;
+    width:                       	40%;
+    x-offset:                       0px;
+    y-offset:                       0px;
 }
 
 prompt {
     enabled: 						true;
-    padding:                        0.5% 0.5% 0.5% 0.5%;
-    border:                  		0px 0px 0px 0px;
+    padding:                        10px;
 	background-color: 				@background;
 	text-color: 					@foreground;
+    border:                  		0px 0px 0px 0px;
     border-radius:                  20px;
     border-color:                  	@accent;
 }
 
 textbox-prompt-colon {
 	expand: 						false;
-	str: 							"Ты сидишь за компьютером уже: ";
+	str: 							" Сеть ";
 	background-color: 				@background;
 	text-color: 					@foreground;
-    padding:                        0.5% 0.5% 0.5% 0.5%;
-
+    padding:                        10px 10px 0px 10px;
 }
 
 inputbar {
 	children: 						[ textbox-prompt-colon, prompt ];
+    spacing:                        15px;
     background-color:               @background;
     text-color:                     @foreground;
     expand:                         false;
     border:                  		2px;
     border-radius:                  12px;
     border-color:                  	@accent;
-    margin:                         0% 21.3% 0% 0%;
-    padding:                        0.5%;
+    margin:                         0px 0px 0px 0px;
+    padding:                        0px;
     position:                       center;
 }
 
 listview {
-    background-color:               @background;
-    margin:                         0% 0% 0% 0%;
-    spacing:                        2%;
+    columns:						3;
+    lines:							1;
+    spacing:                        15px;
     cycle:                          true;
     dynamic:                        true;
-    layout:                         horizontal;
-    position:                       center;
+    layout:                         vertical;
 }
 
 mainbox {
     background-color:               @background;
     children:                       [ inputbar, listview ];
-    spacing:                        3.5%;
-    padding:                        4% 0% 0% 2%;
+    spacing:                        15px;
+    margin:                         40px;
 }
 
 element {
     background-color:               @background-alt;
     text-color:                     @foreground;
-    orientation:                    horizontal;
+    orientation:                    vertical;
     border-radius:                  100%;
 }
 
@@ -83,19 +78,20 @@ element-text {
     expand:                         true;
     horizontal-align:               0.5;
     vertical-align:                 0.5;
-    margin:                         4.5% 2.7% 4.5% 2.7%;
+    margin:                         40px 0px 40px 0px;
 }
 
 element normal.urgent,
 element alternate.urgent {
     background-color:               @urgent;
     text-color:                     @foreground;
-    border-radius:                  10px;
+    border-radius:                  100%;
+	border:							0;
 }
 
 element normal.active,
 element alternate.active {
-    background-color:               @background;
+    background-color:               @background-alt;
     text-color:                     @foreground;
 }
 
@@ -104,11 +100,11 @@ element selected {
     text-color:                     @foreground;
     border:                  		0.2% 0.2% 0.2% 0.2%;
     border-radius:                  100%;
-    border-color:                  	@accent;
+    border-color:                  	@background-alt;
 }
 
 element selected.urgent {
-    background-color:               @background-alt;
+    background-color:               @urgent;
     text-color:                     @foreground;
 }
 

@@ -36,6 +36,8 @@
 #default_time_value = 60000
 # The time delta on each zoom in/out action (in milliseconds).
 #time_delta = 15000
+# Hides the time scale.
+#hide_time = false
 # Override layout default widget
 #default_widget_type = "proc"
 #default_widget_count = 1
@@ -45,14 +47,16 @@
 #use_old_network_legend = false
 # Remove space in tables
 #hide_table_gap = false
+# Show the battery widgets
+#battery = false
 # Disable mouse clicks
 #disable_click = false
 # Built-in themes.  Valid values are "default", "default-light", "gruvbox", "gruvbox-light", "nord", "nord-light"
-color = "nord"
+#color = "default"
 # Show memory values in the processes widget as values by default
 #mem_as_value = false
 # Show tree mode by default in the processes widget.
-tree = true
+#tree = false
 # Shows an indicator in table widgets tracking where in the list you are.
 #show_table_scroll_position = false
 # Show processes as their commands by default in the process widget.
@@ -109,28 +113,29 @@ tree = true
 # [[row.child.child]] represents a widget.
 #
 # All widgets must have the type value set to one of ["cpu", "mem", "proc", "net", "temp", "disk", "empty"].
-# All layout components have a ratio value - if this is not set, then it defaults to 1. 
+# All layout components have a ratio value - if this is not set, then it defaults to 1.
 # The default widget layout:
-[[row]]
-  ratio=40
-  [[row.child]]
-  type="proc"
-[[row]]
-    ratio=30
-    [[row.child]]
-      ratio=4
-	  [[row.child.child]]
-      type="mem"
-      [[row.child.child]]
-      type="net"
-      [[row.child.child]]
-      type="cpu"
-    [[row.child]]
-      ratio=3
-      [[row.child.child]]
-        type="temp"
-      [[row.child.child]]
-        type="disk"
+#[[row]]
+#  ratio=30
+#  [[row.child]]
+#  type="cpu"
+#[[row]]
+#    ratio=40
+#    [[row.child]]
+#      ratio=4
+#      type="mem"
+#    [[row.child]]
+#      ratio=3
+#      [[row.child.child]]
+#        type="temp"
+#      [[row.child.child]]
+#        type="disk"
+#[[row]]
+#  ratio=30
+#  [[row.child]]
+#    type="net"
+#  [[row.child]]
+#    type="proc"
 #    default=true
 
 
