@@ -1,9 +1,10 @@
 ## blenderfruitos
 
-Config minimal Solus
+Config minimal
 
 ![Screenshot](screenshot_2.png)
 ![Screenshot Budgie](https://i.imgur.com/3Mq1OtB.png)
+![Screenshot_Openbox](2022-05-25-105836_1920x1080_scrot.png)
 
 BSPWM
 
