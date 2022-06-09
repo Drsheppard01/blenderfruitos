@@ -61,4 +61,4 @@ Wi-Fi | [Network-Manager-wifi](https://networkmanager.dev/) and [IWD backend](ht
 Bootloader | [systemdboot](https://systemd.io/BOOT_LOADER_INTERFACE/)
 Audio server | [PipeWire](https://pipewire.org/)
 
-List Exensions for GNOME ['user-theme@gnome-shell-extensions.gcampax.github.com', 'appindicatorsupport@rgcjonas.gmail.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'just-perfection-desktop@just-perfection', 'arcmenu@arcmenu.com']
+List Exensions for GNOME user-themes, appindicator, places-menu, dash-to-dock, apps-menu, just-perfection
