@@ -46,7 +46,7 @@ Notifications | [Dunst](https://github.com/dunst-project/dunst)
 File Manager | [PCManFM-QT](https://github.com/lxqt/pcmanfm-qt)
 Hotels | no weekends, only work
 
-![Screenshot GNOME for humans](Снимок экрана от 2022-06-01 12-31-00.png)
+![Screenshot GNOME for humans](12-31-00.png)
 
 GNOME
 Software | Name
