@@ -1,11 +1,8 @@
 ## blenderfruitos
 
-Config minimal
+Configs
 
 ![Screenshot](screenshot_2.png)
-![Screenshot Budgie](https://i.imgur.com/3Mq1OtB.png)
-![Screenshot_Openbox](2022-05-25-105836_1920x1080_scrot.png)
-
 BSPWM
 
 Software | Name
@@ -19,6 +16,7 @@ File Manager | [Nautilus](https://gitlab.gnome.org/GNOME/nautilus)
 Hotkeys | [sxhkd](https://github.com/baskerville/sxhkd)
 Hotels | https://www.trivago.com
 
+![Screenshot Budgie](https://i.imgur.com/3Mq1OtB.png)
 BUDGIE
 
 Software | Name
@@ -32,7 +30,7 @@ Terminal | [kitty](https://sw.kovidgoyal.net/kitty/)
 Shell | [ZSH](https://www.zsh.org) with [Oh-my-zsh](https://ohmyz.sh) and [pure prompt](https://github.com/sindresorhus/pure)
 Hotels | https://www.trivago.com
 
-
+![Screenshot_Openbox](2022-05-25-105836_1920x1080_scrot.png)
 OPENBOX
 Software | Name
 ------------ | -------------
@@ -43,3 +41,5 @@ Launcher | [Rofi](https://github.com/davatorium/rofi)
 Notifications | [Dunst](https://github.com/dunst-project/dunst)
 File Manager | [PCManFM-QT](https://github.com/lxqt/pcmanfm-qt)
 Hotels | no weekends, only work
+
+
