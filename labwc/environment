@@ -1,0 +1,29 @@
+# Example environment file
+
+# Set two keyboard layouts and toggle between them using alt+shift
+XKB_DEFAULT_LAYOUT=us,ru
+XKB_DEFAULT_OPTIONS=grp:win_space_toggle
+
+# Force firefox to use wayland backend
+MOZ_ENABLE_WAYLAND=1
+
+# Set cursor theme.
+# Find icons themes with the command below or similar:
+#     find /usr/share/icons/ -type d -name "cursors"
+XCURSOR_THEME=Bibata
+
+Set global GTK theme
+GTK_Theme=Colloid-dark
+
+# Set core env vars
+
+SDL_VIDEODRIVER=wayland
+XDG_SESSION_TYPE=wayland
+XDG_CURRENT_DESKTOP=sway
+XDG_SESSION_DESKTOP=sway
+SDL_VIDEODRIVER=wayland
+_JAVA_AWT_WM_NONREPARENTING=1
+
+GDK_BACKEND=wayland
+
+QT_STYLE_OVERRIDE=kvantum

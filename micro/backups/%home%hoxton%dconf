@@ -1,0 +1,22 @@
+/org/gnome/shell/enabled-extensions/
+
+['user-theme@gnome-shell-extensions.gcampax.github.com', 'appindicatorsupport@rgcjonas.gmail.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'just-perfection-desktop@just-perfection', 'arcmenu@arcmenu.com']
+
+/org/gnome/dekstop/interface/
+clock-show-seconds:yes
+clock-show-weekday:yes
+cursor-size:24
+cursor-theme: Bibata-Modern-Classic
+document-font-name: Inter Light 11
+enable-animations: True
+enable-hot-corners: True
+font-antialiasing: 'rgba'
+font-hinting: 'Full'
+gtk-theme: 'Orchis-light'
+icon-theme: 'Tela-Circle'
+Monospace-font-name: 'Iosevka 10'
+Show-Battery-Percentage: True
+
+/org/gnome/desktop/wm/preferences
+button-layout:minimize, maximize,close
+titlebar-font 'Inter Semi-Bold 11'

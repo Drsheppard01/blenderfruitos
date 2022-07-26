@@ -1,0 +1,38 @@
+window {
+  font-family: "Inter";
+  font-size: 18px;
+  margin: 5px;
+  background-color: #080808;
+  color: #f5f5f5;
+}
+
+#input {
+  font-size: 18px;
+  border-radius: 0;
+  border-width: 2px;
+  border-color: #414141;
+  background: #080808;
+  color: #f5f5f5;
+  margin: 5px;
+}
+
+#entry:selected {
+  border: none;
+}
+
+#inner-box {
+  margin: 5px;
+}
+
+#outer-box {
+  border: 2px solid #414141;
+}
+
+#scroll {
+  margin: 5px;
+}
+
+#text {
+  margin: 5px;
+  color: #f5f5f5;
+}

@@ -1,0 +1,12 @@
+settings:
+  log: {}
+  metadata:
+    last_update: 2022-07-06 22:40
+    update_interval: 3
+  search:
+    match_all: false
+    newest_only: true
+  show updates at startup: true
+view:
+  filter: to_update
+  show: all

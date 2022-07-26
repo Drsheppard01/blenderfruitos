@@ -1,0 +1,57 @@
+[Added Associations]
+image/jpeg=org.kde.gwenview;
+application/xml=com.visualstudio.code-oss.desktop;org.gnome.TextEditor.desktop;
+inode/directory=pcmanfm-qt.desktop;
+text/plain=code.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-GGZ8M1.desktop;
+application/vnd.flatpak=code.desktop;
+application/x-shellscript=code.desktop;
+application/x-desktop=code.desktop;
+application/wps-office.potx=wps-office-prometheus.desktop;
+application/wps-office.dpss=wps-office-prometheus.desktop;
+application/wps-office.dpso=wps-office-prometheus.desktop;
+application/wps-office.xlsx=wps-office-prometheus.desktop;
+application/wps-office.xltx=wps-office-prometheus.desktop;
+application/wps-office.ets=wps-office-prometheus.desktop;
+application/wps-office.eto=wps-office-prometheus.desktop;
+application/wps-office.docx=wps-office-prometheus.desktop;
+application/wps-office.dotx=wps-office-prometheus.desktop;
+application/wps-office.wpss=wps-office-prometheus.desktop;
+application/wps-office.wpso=wps-office-prometheus.desktop;
+text/css=code.desktop;
+application/vnd.appimage=appimagelauncher-lite-AppImageLauncherSettings.desktop;nautilus-autorun-software.desktop;
+application/pdf=brave-browser.desktop;
+application/x-tar=lxqt-archiver.desktop;
+x-scheme-handler/http=firefox.desktop;brave-browser.desktop;
+x-scheme-handler/https=firefox.desktop;brave-browser.desktop;
+x-scheme-handler/chrome=firefox.desktop;
+text/html=firefox.desktop;brave-browser.desktop;
+application/x-extension-htm=firefox.desktop;
+application/x-extension-html=firefox.desktop;
+application/x-extension-shtml=firefox.desktop;
+application/xhtml+xml=firefox.desktop;brave-browser.desktop;
+application/x-extension-xhtml=firefox.desktop;
+application/x-extension-xht=firefox.desktop;
+
+[Default Applications]
+x-scheme-handler/tg=userapp-Telegram Desktop-GGZ8M1.desktop
+text/html=brave-browser.desktop
+x-scheme-handler/http=brave-browser.desktop
+x-scheme-handler/https=brave-browser.desktop
+x-scheme-handler/about=brave-browser.desktop
+x-scheme-handler/unknown=brave-browser.desktop
+text/plain=code.desktop
+text/css=code.desktop
+inode/directory=pcmanfm-qt.desktop;
+application/vnd.appimage=nautilus-autorun-software.desktop
+x-scheme-handler/chrome=firefox.desktop
+application/x-extension-htm=firefox.desktop
+application/x-extension-html=firefox.desktop
+application/x-extension-shtml=firefox.desktop
+application/xhtml+xml=brave-browser.desktop
+application/x-extension-xhtml=firefox.desktop
+application/x-extension-xht=firefox.desktop
+application/xml=org.gnome.TextEditor.desktop
+
+[Removed Associations]
+application/vnd.comicbook-rar=com.github.johnfactotum.Foliate.desktop;

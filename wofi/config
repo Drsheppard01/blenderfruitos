@@ -1,0 +1,15 @@
+style=/home/hoxton/.config/wofi/moonfly.css
+x=10
+y=0
+location=top_left
+show=drun
+allow_images=true
+width=500
+height=500
+always_parse_args=true
+show_all=true
+print_command=true
+layer=overlay
+insensitive=true
+prompt=Поиск
+content_halign=

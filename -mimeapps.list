@@ -1,0 +1,4 @@
+[Default Applications]
+text/plain=com.visualstudio.code-oss.desktop
+application/x-desktop=com.visualstudio.code-oss.desktop
+image/png=com.interversehq.qView.desktop

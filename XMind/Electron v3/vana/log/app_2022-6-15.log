@@ -1,0 +1,33 @@
+
+-------- SESSION 2022-06-15T01:18:26.134Z (12.0.2+202204260710, linux, x64, 12291076096, XMind Ltd., vana_linux) --------
+[I 2022-06-15T01:18:26.170Z auto-updater] current version is "12.0.2"
+[I 2022-06-15T01:18:26.198Z main:store:plugins:electron] current pid is "3593"
+[I 2022-06-15T01:18:26.249Z main:store:plugins:memento] Migration start
+[I 2022-06-15T01:18:26.249Z main:store:plugins:memento] Migration stop, vud directory doesn't exist
+[I 2022-06-15T01:18:26.249Z main:store:plugins:memento] Migration completed [] . used time: 0 sec.
+[I 2022-06-15T01:18:26.250Z main:store:plugins:memento] Migration 2 start
+[I 2022-06-15T01:18:26.250Z main:store:plugins:memento] Migration 2 completed.
+[I 2022-06-15T01:18:26.250Z main:store:plugins:memento] Migration 3 start
+[I 2022-06-15T01:18:26.251Z main:store:plugins:memento] perMachineLicense.json Reading...
+[I 2022-06-15T01:18:26.251Z main:store:plugins:memento] Migration 3 completed.
+[I 2022-06-15T01:18:26.560Z main:store:plugins:electron] Application will finish launching.
+[I 2022-06-15T01:18:26.570Z main:store:plugins:electron] Application arguments: ["/opt/XMind/xmind"]
+[I 2022-06-15T01:18:26.588Z main:store:plugins:electron] Application is ready.
+[I 2022-06-15T01:18:26.652Z main:store:plugins:electron] check auto install failed...
+[I 2022-06-15T01:18:26.781Z main:store:plugins:electron] Device ID: 84486503-7d45-44ad-973f-9fa16c13d21c
+[I 2022-06-15T01:18:46.300Z main:store:plugins:open-handler] Recover: Map(0) {}
+[I 2022-06-15T01:18:46.301Z main:store:plugins:activation-updater] Start updating subscription information periodically.
+[I 2022-06-15T01:18:46.302Z main:store:plugins:activation-updater] Schedule refresh timeout(60000).
+[I 2022-06-15T01:18:46.302Z main:store:plugins:activation-updater] Start updating per-machine license information periodically.
+[I 2022-06-15T01:18:46.302Z main:store:plugins:activation-updater] Schedule refresh timeout(60000).
+[I 2022-06-15T01:18:58.451Z main:store:plugins:electron] All windows closed. Quit application....
+[I 2022-06-15T01:18:58.452Z main:store:plugins:electron] Application is intended to quit.
+[I 2022-06-15T01:18:58.452Z main:store:plugins:electron] Application status is quitting:  false
+[I 2022-06-15T01:18:58.452Z main:store:plugins:electron] Asking all editors to close their documents...
+[I 2022-06-15T01:18:58.452Z main:store:plugins:electron] All documents are closed.
+[I 2022-06-15T01:18:58.453Z main:store:plugins:activation-updater] Stop updating per-machine license information periodically.
+[I 2022-06-15T01:18:58.453Z main:store:plugins:activation-updater] Stop updating subscription information periodically.
+[I 2022-06-15T01:18:58.454Z main:store:plugins:electron] Application is intended to quit.
+[I 2022-06-15T01:18:58.454Z main:store:plugins:electron] Application status is quitting:  true
+[I 2022-06-15T01:18:58.455Z main:store:plugins:electron] Application will quit.
+[I 2022-06-15T01:18:58.455Z main:store:plugins:electron] Application quitted.
