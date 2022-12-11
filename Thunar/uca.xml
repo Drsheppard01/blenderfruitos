@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<unique-id>1670257573684455-1</unique-id>
+	<command>exo-open --working-directory %f --launch foot</command>
+	<description>Example for a custom action</description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>micro-logo</icon>
+	<name>Open With Micro</name>
+	<unique-id>1670425952390845-1</unique-id>
+	<command>foot micro %F</command>
+	<description>open in text editor</description>
+	<patterns>*</patterns>
+</action>
+</actions>
