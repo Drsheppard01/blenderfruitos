@@ -18,14 +18,14 @@ doas chimera-chroot /media/root
 apk update
 apk upgrade --available
 apk fix
-apk add linux-stable
+apk add linux-stable systemd-boot
 genfstab -t PARTLABEL / > /etc/fstab
 passwd root
 useradd myuser
 passwd myuser
 usermod -a -G wheel myuser
 echo mycomputer > /etc/hostname
-ln -sf ../usr/share/zoneinfo/Europe/Prague /etc/localtime
+ln -sf ../usr/share/zoneinfo/Europe/P /etc/localtime
 dinitctl -o enable gdm
 dinitctl -o enable chrony
 dinitctl -o enable networkmanager
