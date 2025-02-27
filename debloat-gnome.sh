@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/zsh
 
 # This script delete unused packages. Be vigilant and read carefully what he wants to remove
 
-sudo dnf remove ImageMagick* \
+sudo dnf rm ImageMagick\* \
 NetworkManager-openconnect-gnome \
 NetworkManager-openvpn-gnome \
 NetworkManager-pptp-gnome \
@@ -11,23 +11,25 @@ NetworkManager-vpnc-gnome \
 abrt \
 adcli \
 baobab \
+brltty \
 cheese \
 chrome-gnome-shell \
-gnome-browser-connector
+gnome-browser-connector \
 cyrus-sasl-gssapi \
 cyrus-sasl-plain \
 dos2unix \
 eog \
-f40-backgrounds-gnome \
+f41-backgrounds-gnome \
 fedora-bookmarks \
 fedora-chromium-config \
+fedora-flathub-remote \
 fedora-workstation-backgrounds \
 firefox \
-geolite2* \
+geolite2\* \
 gnome-backgrounds \
 gnome-boxes \
 gnome-characters \
-gnome-classic* \
+gnome-classic\* \
 gnome-clocks \
 gnome-color-manager \
 gnome-contacts \
@@ -37,21 +39,18 @@ gnome-logs \
 gnome-maps \
 gnome-remote-desktop \
 gnome-screenshot \
-gnome-screenshot \
-gnome-shell-extension-background-logo \
-gnome-shell-extension-horizontal-workspaces \
-gnome-shell-extension-launch-new-instance \
-gnome-shell-extension-window-list \
 gnome-themes-extra \
 gnome-tour \
-gnome-user* \
+gnome-user\* \
 gnome-weather \
-hyperv* \
+hyperv\* \
 ibus-hangul \
 ibus-typing-booster \
 kpartx \
-libreoffice* \
+libreoffice\* \
+livesys-scripts \
 lvm2 \
+mediawriter \
 mlocate \
 mozilla-filesystem \
 mtr \
@@ -61,9 +60,10 @@ nfs-utils \
 nmap-ncat \
 nm-connection-editor \
 openssh-server \
-open-vm* \
-podman* \
-ppp* \
+open-vm\* \
+podman\* \
+ppp\* \
+qadwaitadecorations-qt5 \
 qemu-guest-agent \
 quota \
 quota-devel \
@@ -75,9 +75,12 @@ sane-airscan \
 sgpio \
 simple-scan \
 sos \
-speech* \
+gnome-connections \
+gnome-system-monitor \
+snapshot \
+speech\* \
 spice-vdagent \
-sssd* \
+sssd\* \
 tcpdump \
 teamd \
 thermald \
@@ -88,12 +91,11 @@ words \
 xorg-x11-drv-amdgpu \
 xorg-x11-drv-vmware \
 yajl \
-*evince* \
-*hangul* \
-*kkc* \
-*libvirt* \
-*m17n* \
-*perl \
-*pinyin* \
-*yelp* \
-*zhuyin* 
+evince\* \
+hangul\* \
+kkc\* \
+libvirt\* \
+m17n\* \
+pinyin\* \
+yelp\* \
+zhuyin\*
