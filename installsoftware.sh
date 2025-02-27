@@ -2,14 +2,15 @@
 
 # Script for installing the most complete software package that covers all your needs
 
-sudo dnf install gnome-console \
+sudo dnf install foot \
 clapper \
 loupe \
 foliate \
 gnome-text-editor \
 micro
-sudo dnf remove gedit \
-gnome-terminal \
+sudo dnf remove gnome-software flatpak \
+ptyxis \
 totem \
 snapshot \
-rhythmbox
+rhythmbox &&
+sudo dnf autoremove
