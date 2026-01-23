@@ -1,0 +1,9 @@
+[org/gnome/nautilus/icon-view]
+captions=['date_modified', 'size', 'type']
+[org/gnome/nautilus/preferences]
+show-create-link=true
+show-delete-permanently=true
+[/org/gnome/TextEditor]
+highlight-current-line=true
+show-line-numbers=true
+show-map=true
