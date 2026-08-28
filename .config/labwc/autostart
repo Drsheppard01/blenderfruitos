@@ -1,0 +1,22 @@
+# Labwc autostart file
+# Configured for Blenderfruit
+
+## Login with sound
+
+pw-play ~/.local/share/sounds/desktop-login.wav &
+
+awww-daemon 2>&1 &
+awww img /home/drsheppard01/Изображения/wallpaper.jpg 2>&1 &
+
+# Start ironbar shell
+ironbar 2>&1 &
+
+# start veila
+veilad 2>&1 &
+
+# Start polkit-gnome to prompt for elevated credentials when neccessary
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 2>&1 &
+
+# Import user env vars into systemd user session to support xdg-desktop-portal-wlr
+dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=labwc:wlroots 2>&1 &
+

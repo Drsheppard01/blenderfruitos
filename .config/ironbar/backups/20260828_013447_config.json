@@ -1,0 +1,66 @@
+{
+  "icon_theme": "Marwaita",
+  "start": [
+    {
+      "type": "menu",
+      "label": "󱓞"
+    }
+  ],
+  "center": [
+    {
+      "type": "clock"
+    }
+  ],
+  "end": [
+    {
+      "type": "tray"
+    },
+    {
+      "type": "volume"
+    },
+    {
+      "type": "custom",
+      "name": "power-menu",
+      "class": "power-menu",
+      "bar": [
+        {
+          "type": "button",
+          "name": "power-btn",
+          "label": "",
+          "on_click": "popup:toggle"
+        }
+      ],
+      "popup": [
+        {
+          "type": "box",
+          "orientation": "vertical",
+          "widgets": [
+            {
+              "type": "label",
+              "name": "header",
+              "label": "Power menu"
+            },
+            {
+              "type": "box",
+              "name": "buttons",
+              "widgets": [
+                {
+                  "type": "button",
+                  "class": "power-btn",
+                  "label": "<span>󰐥</span>",
+                  "on_click": "!shutdown now"
+                },
+                {
+                  "type": "button",
+                  "class": "power-btn",
+                  "label": "<span>󰜉</span>",
+                  "on_click": "!reboot"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

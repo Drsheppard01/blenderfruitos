@@ -1,0 +1,222 @@
+/* GNOME 50 Ironbar - using GTK theme variables */
+
+* {
+    font-family: Adwaita Sans;
+    font-size: 16px;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+}
+
+/* Main window */
+window {
+    background-color: @theme_bg_color;
+    color: @theme_fg_color;
+}
+
+/* Popovers with rounded corners */
+popover, popover contents {
+    border-radius: 24px;
+    padding: 0;
+    background-color: @theme_bg_color;
+    color: @theme_fg_color;
+}
+
+/* Standard buttons */
+button {
+    color: @theme_fg_color;
+    background-color: transparent;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: all 200ms ease-in-out;
+}
+
+button:hover {
+    background-color: @theme_hover_bg_color;
+}
+
+button:active {
+    background-color: @accent_color;
+    color: @theme_fg_color;
+}
+
+/* Suggested action buttons (accent) */
+button.suggested-action {
+    background-color: @accent_color;
+    color: white;
+}
+
+button.suggested-action:hover {
+    background-color: shade(@accent_color, 1.1);
+}
+
+/* Labels */
+label {
+    color: @theme_fg_color;
+    padding: 4px 8px;
+}
+
+/* Module containers */
+.widget-container {
+    padding: 4px 6px;
+    border-radius: 6px;
+    transition: all 200ms ease-in-out;
+}
+
+.widget-container:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Power Menu */
+.power-menu {
+	background: #48484b;
+	border-radius: 18px;
+	padding: 16px;
+    margin-left: 10px;
+    padding: 0;
+}
+
+.power-menu #power-btn {
+	border-radius: 14px;
+    color: @theme_fg_color;
+    padding: 4px 6px;
+}
+
+.popup-power-menu {
+    padding: 12px;
+    background-color: @theme_bg_color;
+    color: @theme_fg_color;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.popup-power-menu #header {
+    color: @theme_fg_color;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.popup-power-menu .power-btn {
+    color: @theme_fg_color;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 200ms ease-in-out;
+}
+
+.popup-power-menu .power-btn + .power-btn {
+    margin-left: 8px;
+}
+
+.popup-power-menu .power-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.popup-power-menu .power-btn:active {
+    background-color: @accent_color;
+    color: white;
+    border-color: @accent_color;
+}
+
+/* Error states */
+.error {
+    color: @error_color;
+}
+
+/* Clock module */
+.clock {
+    padding: 4px 8px;
+    font-weight: 500;
+    color: @theme_fg_color;
+}
+
+/* Volume module */
+.volume {
+    padding: 4px 6px;
+    spacing: 4px;
+}
+
+.volume slider {
+    min-width: 80px;
+    padding: 2px;
+}
+
+/* System menu (bluetooth, network, etc) */
+.system-menu {
+    padding: 4px 6px;
+    spacing: 6px;
+}
+
+.system-menu button {
+    padding: 4px 6px;
+}
+
+/* Launcher module */
+.launcher {
+    padding: 0;
+    spacing: 4px;
+}
+
+.launcher button {
+    padding: 4px;
+    min-width: 36px;
+    min-height: 36px;
+    border-radius: 6px;
+}
+
+/* Workspaces module */
+.workspaces {
+    padding: 4px 6px;
+    spacing: 4px;
+}
+
+.workspaces button {
+    min-width: 32px;
+    min-height: 32px;
+    padding: 2px;
+}
+
+.workspaces button.active {
+    background-color: @accent_color;
+    color: white;
+}
+
+/* Generic popups */
+.popup {
+    padding: 12px;
+    background-color: @theme_bg_color;
+    color: @theme_fg_color;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Scrollbar styling */
+scrollbar {
+    background-color: transparent;
+    padding: 0;
+}
+
+scrollbar slider {
+    min-width: 6px;
+    min-height: 6px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    margin: 2px;
+}
+
+scrollbar slider:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Separator */
+separator {
+    background-color: rgba(255, 255, 255, 0.1);
+    min-width: 1px;
+    min-height: 1px;
+    margin: 0 4px;
+}

@@ -1,0 +1,102 @@
+{
+    "icon_theme": "Papirus-Dark",
+    "position": "bottom",
+    "margin": {
+        "top": 9,
+        "right": 8,
+        "left": 8,
+        "bottom": 8
+    },
+    "start":[
+        {
+            "type": "custom",
+            "bar":[
+                {
+                    "type": "button",
+                    "label": "<span size='19000' rise='-26000'> </span>",
+                    "on_click": "!$HOME/.config/ironbar/scripts-1/rofi/scripts/rofi-toggle"
+                }
+            ]
+        },
+        {
+        "type": "custom",
+        "bar": [
+            {
+                "type": "custom",
+                "bar":[
+					{
+                        "type": "button",
+                        "label": "<span size='15000' rise='-5450'> </span>",
+                        "on_click": "!wtype -M logo d -m logo"
+                    }
+                ]
+            }
+        ]
+       },
+       {
+       "type": "custom",
+       "bar": [
+       		{
+       		"type": "button",
+       		"label": "<span size = '15000' rise='7000'> 󰒓 </span>",
+       		"on_click": "!lxqt-config"
+       	}
+       ]
+       }
+    ],
+    "center": [
+    	{
+    		"type": "launcher",
+    		"favorites": [
+    			"pcmanfm-qt",
+    			"qterminal",
+    			"firefox.webapp-c36832f4-7508-4c57-9b63-c320051ca38c",
+    			"firefox.webapp-821e70da-9248-4ec6-a459-9ad79b30e775",
+    			"firefox",
+    			"org.telegram.desktop._f9986ef3ea07a29b2753555c0634d8f8",
+    			"firefox.webapp-0c04f3cc-3130-4896-8a26-5d6e2de9c16b"
+    		]
+    	}
+    ],
+    "end": [
+    	{
+    		"type": "custom",
+    		"bar": [
+    			{
+    				"type": "button",
+    				"label": "",
+    				"on_click": "popup:toggle"
+    			}
+    		],
+    		"popup": [
+    			{
+    				"type": "box",
+    				"widgets": [
+    					{
+    						"type": "tray"
+    					}
+    				]
+    			}
+    		]
+    	},
+    	{
+    		"type": "custom",
+    		"bar": [
+    			{
+    				"type": "custom",
+    				"bar": [
+    					{
+    						"type": "button",
+    						"label": "<span size='13000' rise='-2450'>      {{5000:$HOME/.config/ironbar/scripts-1/battery/battery.sh}}</span>",
+    						"on_click": "!swaync-client -t"
+    					}
+    				]
+    			}
+    		]
+    	},
+    	{
+    		"type": "clock",
+    		"format": "%I:%M %p"
+    	}
+    ]
+}
