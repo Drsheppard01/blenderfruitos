@@ -250,7 +250,7 @@
       <action name="Execute" command="ghostty" />
     </keybind>
     <keybind key="A-F2">
-      <action name="Execute" command=""/>
+      <action name="Execute" command="yeet"/>
     </keybind>
     <keybind key="A-F4">
       <action name="Close" />

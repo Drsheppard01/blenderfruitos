@@ -41,7 +41,7 @@ XCURSOR_SIZE=24
 ## are experiencing issues with disappearing cursors, this might fix it.
 ##
 
- WLR_NO_HARDWARE_CURSORS=1
+WLR_NO_HARDWARE_CURSORS=1
 
 ##
 ## In order for labwc to work out of the box, the environment variable below

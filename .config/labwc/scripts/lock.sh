@@ -1,3 +1,3 @@
 #!/usr/bin/sh
 
-gtklock &
+veila lock &

@@ -3,7 +3,7 @@
 
 ## Login with sound
 
-pw-play ~/.local/share/sounds/desktop-login.wav &
+pw-play ~/.local/share/sounds/desktop-login.wav 2>&1 &
 
 awww-daemon 2>&1 &
 awww img /home/drsheppard01/Изображения/wallpaper.jpg 2>&1 &
@@ -19,4 +19,3 @@ veilad 2>&1 &
 
 # Import user env vars into systemd user session to support xdg-desktop-portal-wlr
 dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=labwc:wlroots 2>&1 &
-
