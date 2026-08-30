@@ -1,0 +1,9 @@
+:root {
+    --font-family: "Geist Sans", "Font Awesome 6 Free", sans-serif;
+}
+
+.bar, .popover {
+	font-weight: bold;
+	font-size: 16px;
+}
+

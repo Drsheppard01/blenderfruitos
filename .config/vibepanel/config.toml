@@ -1,0 +1,125 @@
+# =============================================================================
+# vibepanel Configuration
+# =============================================================================
+#
+# Minimal starter config. For all available options, see:
+# https://github.com/prankstr/vibepanel/blob/main/docs/configuration.md
+#
+# Commands:
+#   vibepanel --check-config         Validate configuration
+#   vibepanel --print-example-config Print this example config
+#
+# =============================================================================
+
+[bar]
+position = "top"       # "top" or "bottom"
+size = 32
+border_radius = 0
+background_opacity = 1.0
+# outline = true         # Override theme.outline for the bar (omit = inherit)
+
+[widgets]
+left = ["custom-fuzzel"]
+center = ["clock", "media", "notifications"]
+right = [
+  "tray",
+  "quick_settings",
+]
+
+[widgets.custom-thymbr]
+icon = "applications-system-symbolic"
+on_click = "thymbr"
+tooltip = "Settings"
+
+[widgets.custom-fuzzel]
+icon = "applications-other-symbolic"
+on_click = "~/.config/fuzzel/toggle.sh"
+tooltip = "Fuzzel launcher"
+
+[widgets.quick_settings]
+idle_inhibitor = false
+shutdown_command = "systemctl poweroff"
+reboot_command = "systemctl reboot"
+suspend_command = "systemctl suspend"
+lock_command = "pidof veila lock || veila lock"
+logout_command = "labwc --exit"
+bluetooth = false
+vpn = false
+# Per-widget options use [widgets.<name>] sections.
+# Example:
+#   [widgets.clock]
+#   format = "%H:%M"
+#   outline_color = "accent"  # Per-widget outline color: "subtle" | "accent" | "foreground" | "#rrggbb"
+#
+#   [widgets.battery]
+#   disabled = true
+#
+#   [widgets.media]
+#   visualizer = true  # Enable/disable cava audio visualizer (default: true)
+#
+# Custom widgets use the "custom-" prefix for user-defined buttons:
+#   right = ["custom-power", "custom-os", "tray", "clock"]
+#
+#   [widgets.custom-power]
+#   icon = "system-shutdown-symbolic"
+#   label = "Power"
+#   tooltip = "Power menu"
+#   on_click = "wlogout"
+#   on_click_right = "systemctl suspend"
+#
+#   [widgets.custom-os]
+#   image = "/usr/share/pixmaps/distro-logo.svg"  # file path (PNG, SVG, etc.)
+#   tooltip = "My Distro"
+#
+#   [widgets.custom-weather]
+#   exec = "curl -s 'wttr.in/?format=1'"
+#   template = " {output}"
+#   interval = 600
+#   on_click = "xdg-open https://wttr.in"
+#   tooltip = "Weather"
+#   max_chars = 30
+#
+# See documentation for all widget options.
+
+[theme]
+mode = "gtk" # "auto", "dark", "light", "gtk"
+#               "auto" = wallpaper-adaptive theming
+#               (detects from hyprpaper, awww/swww, wpaperd, waypaper)
+#scheme = "dark"         # Material You polarity: "dark" or "light" (auto mode only)
+#               Omit to auto-derive from wallpaper luminance (bright → light, dark → dark)
+#wallpaper = "/path/to/wallpaper"  # Explicit wallpaper for auto mode (default: auto-detect)
+accent = "gtk" # "gtk", "none", or hex color (overrides wallpaper accent in auto mode)
+#animations = true  # Enable/disable all CSS transitions and animations
+#ripple = true      # Enable/disable Material Design ripple effect on click
+#blur = false       # Enable compositor blur via ext-background-effect-v1 (requires niri with blur)
+# outline = false     # Decorative outline on bar, widgets, and surfaces (CSS border)
+#outline_width = 1           # Outline width in pixels (0..=4; 0 disables visibly)
+# outline_color = "accent"    # "subtle" | "accent" | "foreground" | "#rrggbb"
+#outline_opacity = 1.0        # 0.0 = transparent, 1.0 = opaque
+
+[theme.icons]
+theme = "gtk" # "material" or "gtk"
+
+[osd]
+enabled = true
+position = "bottom" # "bottom", "top", "left", "right"
+show_value = false  # Show current value after the bar
+
+[audio]
+# Allow output and microphone volume over 100% (over-amplification), capped at PulseAudio's recommended UI max.
+allow_overdrive = false
+
+[weather]
+# Shared weather data settings for the weather widget and weather-enabled surfaces.
+auto_locate = true # Use GeoClue/IP fallback when no location or coordinates are configured.
+# location = "Berlin"
+# latitude = 52.5200
+# longitude = 13.4050
+# units = "metric"       # "metric" or "imperial"
+# refresh_interval = 900  # Seconds; minimum 600
+
+[advanced]
+compositor = "auto" 
+
+# Custom CSS: place style.css in same directory as this file.
+# See documentation for available CSS variables and classes.
