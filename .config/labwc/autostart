@@ -1,6 +1,14 @@
 # Labwc autostart file
 # Configured for Blenderfruit
 
+# When running under systemd, uncomment the systemctl line below to pull in
+# graphical-session.target via labwc-session.target. This lets systemd user
+# services declaring WantedBy=graphical-session.target (panels, portals,
+# notification daemons, etc.) start in sync with the labwc session. Enable
+# individual services with: systemctl --user enable <unit>
+
+systemctl --user --no-block start labwc-session.target
+
 ## Login with sound
 
 pw-play ~/.local/share/sounds/desktop-login.wav 2>&1 &
@@ -9,7 +17,7 @@ awww-daemon 2>&1 &
 awww img /home/drsheppard01/Изображения/wallpaper.jpg 2>&1 &
 
 # Start ironbar shell
-ironbar 2>&1 &
+vibepanel 2>&1 &
 
 # start veila
 veilad 2>&1 &

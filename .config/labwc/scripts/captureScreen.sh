@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-location="$HOME"/Pictures/Screenshots/"$(date +'%s_grim.png')"
+location="$HOME"/Изображения/'Снимки экрана'/"$(date +'%s_grim.png')"
 
 grim -g "$(slurp -d -o)" "$location"
 

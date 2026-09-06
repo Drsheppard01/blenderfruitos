@@ -1,0 +1,23 @@
+[GTK]
+# Whether to use the dark theme
+application_prefer_dark_theme = true
+
+# Cursor theme name
+cursor_theme_name = "Bibata-Modern-Classic"
+
+# Whether to blink the cursor
+cursor_blink = true
+
+# Font name and size
+font_name = "Geist Sans 14"
+
+# Icon theme name
+icon_theme_name = "Marwaita"
+
+# GTK theme name
+theme_name = "Colloid-Yellow-Dark-Nord"
+
+
+[commands]
+reboot = [ "systemctl", "reboot" ]
+poweroff = [ "systemctl", "poweroff" ]

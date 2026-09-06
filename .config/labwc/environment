@@ -19,7 +19,7 @@
 
 XKB_DEFAULT_LAYOUT=us,ru
 XKB_DEFAULT_OPTIONS=grp:win_space_toggle
-LANG=en_US.UTF-8
+LANG=ru_RU.UTF-8
 
 ## GTK4 started to require input methods like fcitx5 or ibus to handle
 ## simple compose sequences. If you do not use input methods, uncomment
@@ -41,7 +41,7 @@ XCURSOR_SIZE=24
 ## are experiencing issues with disappearing cursors, this might fix it.
 ##
 
-WLR_NO_HARDWARE_CURSORS=1
+# WLR_NO_HARDWARE_CURSORS=1
 
 ##
 ## In order for labwc to work out of the box, the environment variable below
