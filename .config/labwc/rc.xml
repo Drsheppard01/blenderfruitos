@@ -35,35 +35,35 @@
   <!-- <font><theme> can be defined without an attribute to set all places -->
   <!-- <font><theme> can be defined without an attribute to set all places -->
   <theme>
-    <!-- <name>Numix</name> -->
-    <!-- <icon>breeze</icon> -->
+    <name>Adwaita-Dark</name>
+    <icon>Marwaita</icon>
     <fallbackAppIcon>labwc</fallbackAppIcon>
     <titlebar>
-      <layout>icon:iconify,max,close</layout>
+      <layout>icon:close</layout>
       <showTitle>yes</showTitle>
     </titlebar>
-    <cornerRadius>8</cornerRadius>
+    <cornerRadius>12</cornerRadius>
     <keepBorder>yes</keepBorder>
-    <maximizedDecoration>titlebar</maximizedDecoration>
+    <maximizedDecoration>no</maximizedDecoration>
     <dropShadows>no</dropShadows>
     <dropShadowsOnTiled>no</dropShadowsOnTiled>
     <font place="ActiveWindow">
       <name>Geist</name>
       <size>12</size>
       <slant>normal</slant>
-      <weight>normal</weight>
+      <weight>bold</weight>
     </font>
     <font place="InactiveWindow">
       <name>Geist</name>
       <size>12</size>
       <slant>normal</slant>
-      <weight>normal</weight>
+      <weight>bold</weight>
     </font>
     <font place="MenuHeader">
       <name>Geist</name>
       <size>12</size>
       <slant>normal</slant>
-      <weight>normal</weight>
+      <weight>bold</weight>
     </font>
     <font place="MenuItem">
       <name>Geist</name>
@@ -75,11 +75,11 @@
       <name>Geist</name>
       <size>10</size>
       <slant>normal</slant>
-      <weight>normal</weight>
+      <weight>bold</weight>
     </font>
   </theme>
 
-  <windowSwitcher preview="yes" outlines="yes" unshade="yes">
+  <windowSwitcher preview="yes" outlines="yes" unshade="no">
     <osd show="yes" style="thumbnail" output="all" thumbnailLabelFormat="%T" />
     <fields>
       <field content="icon" width="5%" />
@@ -235,7 +235,7 @@
     element, and then (re-)define any special binds you need such as launching
     your favourite terminal or application launcher. See rc.xml for an example.
   -->
-  
+
   <keyboard>
   	<layoutScope>global</layoutScope>
     <repeatRate>25</repeatRate>
@@ -247,16 +247,19 @@
       <action name="PreviousWindow" />
     </keybind>
     <keybind key="W-Return">
-      <action name="Execute" command="ghostty" />
+      <action name="Execute" command="foot" />
+    </keybind>
+    <keybind key="Super_L" onRelease="yes">
+      <action name="Execute" command="sh -c '~/.config/fuzzel/toggle.sh'" />
     </keybind>
     <keybind key="A-F2">
-      <action name="Execute" command="yeet"/>
+      <action name="Execute" command=""/>
     </keybind>
     <keybind key="A-F4">
       <action name="Close" />
     </keybind>
     <keybind key="W-l">
-    <action name="Execute" command="veila lock"/>
+    <action name="Execute" command=""/>
     </keybind>
     <keybind key="W-a">
       <action name="ToggleMaximize" />
@@ -276,22 +279,47 @@
     <keybind key="A-Space">
       <action name="ShowMenu" menu="client-menu" atCursor="no" />
     </keybind>
-    <keybind key="XF86_AudioLowerVolume">
-      <action name="Execute" command="sh -c '~/.config/labwc/scripts/volume_ctrl.sh 10-'" />
+    <keybind key="C-A-minus">
+      <action name="Execute" command="wtype '—'"/>
     </keybind>
-    <keybind key="XF86_AudioRaiseVolume">
-      <action name="Execute" command="sh -c ~/.config/labwc/scripts/volume_ctrl.sh 10+'" />
+    <keybind key="Print">
+        <action name="Execute" command="~/.config/labwc/scripts/captureAll.sh" />
     </keybind>
-    <keybind key="XF86_AudioMute">
-      <action name="Execute" command="sh -c ~/.config/labwc/scripts/volume_ctrl.sh --toggle-mute speaker'" />
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute" command="amixer sset Master 10%-" />
+    </keybind>
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute" command="amixer sset Master 10%+" />
+    </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute" command="amixer sset Master toggle" />
+    </keybind>
+    <keybind key="XF86AudioNext">
+      <action name="Execute" command="playerctl next" />
+    </keybind>
+    <keybind key="XF86AudioPause">
+    	<action name="Execute" command="playerctl pause" />
+    </keybind>
+    <keybind key="XF86AudioPlay">
+      <action name="Execute" command="playerctl play" />
+    </keybind>
+    <keybind key="XF86AudioPrev">
+      <action name="Execute" command="playerctl previous" />
+    </keybind>
+    <keybind key="XF86AudioStop">
+      <action name="Execute" command="playerctl stop" />
     </keybind>
     <keybind key="XF86_MonBrightnessUp">
-      <action name="Execute" command="sh -c '~/.config/labwc/scripts/brightness_ctrl.sh set +10'" />
+      <action name="Execute" command="brightnessctl set +10%" />
     </keybind>
     <keybind key="XF86_MonBrightnessDown">
-      <action name="Execute" command="sh -c '~/.config/labwc/scripts/brightness_ctrl.sh set +10'" />
+      <action name="Execute" command="brightnessctl set 10%-" />
     </keybind>
   </keyboard>
 
+  <menu>
+    <ignoreButtonReleasePeriod>250</ignoreButtonReleasePeriod>
+    <showIcons>yes</showIcons>
+  </menu>
 
 </labwc_config>
